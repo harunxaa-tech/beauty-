@@ -31,6 +31,13 @@ function visibleGroups(){
 function render(){
  if(!items||!subnav||!heading||!count)return;
  heading.textContent=sectionTitles[active]||"Speisekarte";
+ const panelSubtitle=document.getElementById("menu-panel-description");
+ if(panelSubtitle)panelSubtitle.textContent={
+   vorspeisen:"Kleine Köstlichkeiten und mediterrane Frische zum gemeinsamen Genießen.",
+   hauptspeisen:"Die beliebtesten Geschmacksrichtungen Griechenlands – vom Grill bis aus dem Ofen.",
+   nachspeisen:"Genussmomente für einen süßen Abschluss.",
+   mittagsgerichte:"Griechisch genießen in der Mittagspause – Montag bis Freitag."
+ }[active]||"";
  for(const tab of tabs){
    const isActive=tab.dataset.menuTab===active;
    tab.classList.toggle("is-active",isActive);
@@ -48,15 +55,19 @@ function render(){
  }
  dessert.hidden=true;
  const subFrag=document.createDocumentFragment();
- function makeSub(key,label){
-   const b=node("button","subcat-button"+(activeSub===key?" is-active":""),label);
-   b.type="button";b.dataset.subcat=key;b.setAttribute("aria-pressed",String(activeSub===key));
+ function makeSub(key,label,qty){
+   const b=node("button","subcat-button"+(activeSub===key?" is-active":""),null);
+   b.type="button";
+   b.dataset.subcat=key;
+   b.setAttribute("aria-pressed",String(activeSub===key));
+   b.append(node("span","subcat-label",label));
+   if(Number.isFinite(qty))b.append(node("span","subcat-qty",String(qty)));
    b.addEventListener("click",function(){activeSub=key;render()});
    return b;
  }
- subFrag.append(makeSub("all","Alle anzeigen"));
+ subFrag.append(makeSub("all","Alle anzeigen",groups.reduce((sum,g)=>sum+g.entries.length,0)));
  for(const group of groups){
-   subFrag.append(makeSub(group.id,group.title.replace("Mittagskarte · ","")));
+   subFrag.append(makeSub(group.id,group.title.replace("Mittagskarte · ",""),group.entries.length));
  }
  subnav.replaceChildren(subFrag);
  const frag=document.createDocumentFragment();
@@ -64,21 +75,34 @@ function render(){
  for(const group of groups){
    if(activeSub!=="all"&&activeSub!==group.id)continue;
    total+=group.entries.length;
-   frag.append(node("h4","group-title",group.title.replace("Mittagskarte · ","")));
+   const groupSection=node("section","menu-group");
+   groupSection.setAttribute("aria-label",group.title);
+   const header=node("div","group-header");
+   const titleWrap=node("div","group-heading-text");
+   titleWrap.append(node("span","group-kicker","SPEZIALITÄTEN · "+String(groups.indexOf(group)+1).padStart(2,"0")));
+   titleWrap.append(node("h4","group-title",group.title.replace("Mittagskarte · ","")));
+   const ornament=node("span","group-decoration","✧");
+   ornament.setAttribute("aria-hidden","true");
+   header.append(titleWrap,ornament);
+   groupSection.append(header);
    const grid=node("div","group-dishes");
    for(const d of group.entries){
      const card=node("article","menu-dish");
-     const number=node("span","menu-num",/^\d+$/.test(d.number)?"Nr. "+d.number:"");
+     const top=node("div","dish-meta");
+     const number=node("span","menu-num",/^\d+$/.test(d.number)?"NR. "+d.number:"EL GRECO");
+     const price=node("strong","menu-price",d.price+" €");
+     top.append(number,price);
      const desc=node("div","menu-dish-text");
      desc.append(node("h4","",d.name));
      if(d.description)desc.append(node("p","",d.description));
-     card.append(number,desc,node("span","menu-price",d.price+" €"));
+     card.append(top,desc);
      grid.append(card);
    }
-   frag.append(grid);
+   groupSection.append(grid);
+   frag.append(groupSection);
  }
  items.replaceChildren(frag);
- count.textContent=total+" "+(total===1?"Position":"Positionen");
+ count.textContent=total+" "+(total===1?"Gericht":"Gerichte");
  detail.textContent=active==="mittagsgerichte"?
  "Mittagskarte laut bereitgestellter Vorlage: Montag bis Freitag, ausgenommen Feiertage. Verfügbarkeit und Preise bitte telefonisch bestätigen.":
  "Reguläre Speisekarte: Preise gemäß den bereitgestellten Bildern der Restaurantwebsite. Änderungen vorbehalten.";
