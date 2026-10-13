@@ -59,24 +59,7 @@ function render(){
  for(const group of groups){
    subFrag.append(makeSub(group.id,group.title.replace("Mittagskarte · ",""),group.entries.length));
  }
- const selectWrap=node("div","subcat-mobile-chooser");
- const selectLabel=node("label","subcat-mobile-label","Speisen auswählen");
- selectLabel.setAttribute("for","subcat-mobile-select");
- const select=node("select","subcat-mobile-select");
- select.id="subcat-mobile-select";
- select.setAttribute("aria-label","Unterkategorie der Speisekarte auswählen");
- function addOption(key,title,quantity){
-   const opt=node("option","",title+" · "+quantity+" Gerichte");
-   opt.value=key;
-   if(activeSub===key)opt.selected=true;
-   select.append(opt);
- }
- addOption("all","Alle Kategorien",groups.reduce((sum,g)=>sum+g.entries.length,0));
- for(const group of groups)addOption(group.id,group.title.replace("Mittagskarte · ",""),group.entries.length);
- select.value=activeSub;
- select.addEventListener("change",function(){activeSub=select.value;render()});
- selectWrap.append(selectLabel,select);
- subnav.replaceChildren(selectWrap,subFrag);
+ subnav.replaceChildren(subFrag);
  const frag=document.createDocumentFragment();
  let total=0;
  for(const group of groups){
