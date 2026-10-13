@@ -1523,3 +1523,60 @@ img { max-width:100%; }
   .menu-dish h4{font-size:clamp(21px,1.6vw,26px)}
 }
 /* === END V10 === */
+
+
+
+/* === EL GRECO V12: SOFT GREEK FLAG INSPIRED GRADIENT WORDMARK ===
+   Applies ONLY to the header wordmark and hero H1 (not footer).
+   White fades into Aegean blue; thin outline on cream keeps left half legible.
+*/
+.identity:not(.footer-identity) .identity-text strong.greek-gradient-wordmark,
+.hero h1.greek-gradient-wordmark{
+  background-image:linear-gradient(
+    95deg,
+    #ffffff 0%,
+    #fbfdff 30%,
+    #e8f3ff 43%,
+    #99c8ef 53%,
+    #3b91d0 69%,
+    #0d5eaf 85%,
+    #09569d 100%
+  );
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+.identity:not(.footer-identity) .identity-text strong.greek-gradient-wordmark{
+  /* White letters would disappear on the cream header without an outline. */
+  -webkit-text-stroke:0.85px rgba(17,76,126,.80);
+  filter:drop-shadow(0 1px 1px rgba(14,58,90,.18));
+}
+.hero h1.greek-gradient-wordmark{
+  display:inline-block;
+  max-width:100%;
+  -webkit-text-stroke:0.7px rgba(5,36,65,.70);
+  text-shadow:none;
+  filter:drop-shadow(0 4px 7px rgba(0,18,35,.75));
+  background-image:linear-gradient(
+    95deg,
+    #ffffff 0%,
+    #ffffff 32%,
+    #edf7ff 43%,
+    #a1d4f5 54%,
+    #61b3f0 70%,
+    #2b95db 86%,
+    #1476c2 100%
+  );
+}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  .identity:not(.footer-identity) .identity-text strong.greek-gradient-wordmark{color:#0d5eaf;-webkit-text-fill-color:#0d5eaf;background:none}
+  .hero h1.greek-gradient-wordmark{color:#ffffff;-webkit-text-fill-color:#ffffff;background:none}
+}
+@media(prefers-contrast:more){
+  .identity:not(.footer-identity) .identity-text strong.greek-gradient-wordmark{-webkit-text-stroke:1px #0b4b81}
+  .hero h1.greek-gradient-wordmark{-webkit-text-stroke:1px #05283f}
+}
+/* === END EL GRECO V12 === */
