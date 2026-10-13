@@ -273,3 +273,91 @@ dialog{padding:45px 20px 20px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.preview-note,.main-header,.hero,.showcase-section,.mood-strip,.welcome-section,.contact-section,.last-invitation,.footer,.sticky-mobile-actions,.menu-tabs,.subcat-nav{display:none!important}.menu-section{padding:0}.menu-panel{box-shadow:none;border:0;padding:0}.group-dishes{grid-template-columns:1fr 1fr}.menu-dish{break-inside:avoid}}
+
+
+/* V5 MOBILE WIDTH REPAIR
+   Prevent flex-item min-content sizing (long logo subtitle) from enlarging
+   Safari's document viewport. Cards, menu panel and galleries may only use
+   their container width; do not rely solely on clipping an oversized page. */
+html {
+  width:100%;
+  max-width:100%;
+  overflow-x:clip;
+}
+body {
+  position:relative;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow-x:clip;
+}
+main,.main-header,.hero,.showcase-section,.mood-strip,.menu-section,
+.welcome-section,.contact-section,.last-invitation,.footer {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+}
+.header-inner,.identity,.identity-text,.desktop-navigation,
+.category-grid,.category-card,.category-image,.category-info,
+.mood-strip>* , .welcome-inner>*,.menu-panel,.menu-dish,
+.menu-dish-text,.footer-grid>*,.contact-grid>* {
+  min-width:0;
+}
+img { max-width:100%; }
+.category-image img { width:100%;height:100%;object-fit:cover; }
+.category-card { max-width:100%;overflow:hidden; }
+.category-info strong,.category-info small { min-width:0; overflow-wrap:break-word; }
+.category-grid { width:100%; max-width:100%; }
+.mood-strip { overflow:hidden; }
+.mood-photo { min-width:0; overflow:hidden; }
+.menu-section { min-width:0; }
+.menu-panel { max-width:100%; overflow-wrap:anywhere; }
+.group-dishes { min-width:0; }
+.category-photos-note {
+  font-size:11px;
+  line-height:1.6;
+  color:#77838c;
+  text-align:center;
+  margin:18px 0 0;
+}
+@media (max-width:990px) {
+  .header-inner {width:min(calc(100% - 40px),1390px);max-width:calc(100% - 40px);gap:12px;}
+  .identity{flex:1 1 auto;max-width:calc(100% - 58px);min-width:0;overflow:hidden;}
+  .identity-text { flex:1 1 auto; max-width:100%; overflow:hidden; }
+  .identity-text strong{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:clip;}
+  .identity-text small{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .mobile-menu-toggle{flex:0 0 46px;margin-left:auto;}
+  .mobile-navigation:not([hidden]){max-width:100%;min-width:0;box-sizing:border-box;}
+  .mood-strip{max-width:100%;}
+}
+@media (max-width:680px) {
+  .shell {width:calc(100% - 30px);max-width:calc(100% - 30px);margin-left:auto;margin-right:auto;}
+  .header-inner {width:calc(100% - 30px);max-width:calc(100% - 30px);}
+  .identity{max-width:calc(100% - 56px);gap:7px;}
+  .olive-mark{flex:0 0 29px;width:29px;}
+  .identity-text strong{font-size:clamp(20px,6.4vw,27px);line-height:1.05;}
+  .identity-text small{font-size:clamp(5.5px,1.56vw,7px);letter-spacing:.07em;}
+  .hero-inner,.hero-copy,.hero-description {max-width:100%;min-width:0;}
+  .hero h1{max-width:100%;font-size:clamp(44px,12.5vw,70px);overflow-wrap:break-word;}
+  .hero-actions,.hero-actions .btn {max-width:100%;}
+  .category-grid {grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px;row-gap:12px;}
+  .category-card{width:100%;max-width:100%;min-width:0;}
+  .category-info{grid-template-columns:minmax(0,1fr) 11px;gap:3px;}
+  .category-info strong{font-size:clamp(13px,4vw,16px);}
+  .category-info small{font-size:clamp(9px,2.8vw,11px);}
+  .menu-tabs{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));}
+  .menu-tab{min-width:0;font-size:clamp(11px,3.5vw,13px);padding-inline:6px;}
+  .menu-panel{width:100%;min-width:0;max-width:100%;}
+  .menu-dish{grid-template-columns:24px minmax(0,1fr) auto;}
+  .mood-strip{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .mood-photo img {height:100%;width:100%;object-fit:cover;}
+  .welcome-inner{grid-template-columns:minmax(0,1fr);}
+  .contact-grid{grid-template-columns:minmax(0,1fr);}
+  .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .sticky-mobile-actions{left:0;right:0;width:100%;box-sizing:border-box;}
+}
+@media (max-width:360px) {
+  .identity-text strong{font-size:21px;}
+  .category-info strong{font-size:13px;}
+  .category-info small{font-size:9px;}
+}
