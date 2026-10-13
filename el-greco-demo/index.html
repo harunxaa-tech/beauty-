@@ -3,198 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#154d85">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Designvorschau für El Greco – griechisches Restaurant in Neubiberg. Mediterrane Küche, Gastgarten und griechische Gastfreundschaft.">
-  <meta property="og:title" content="El Greco Neubiberg – Website-Designvorschau">
-  <meta property="og:description" content="Unverbindliche Designvorschau. Nicht die offizielle Website.">
+  <meta name="theme-color" content="#0a3153">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="El Greco in Neubiberg – liebevoll gestaltete unabhängige Website-Designvorschau mit griechischer Küche, vollständiger Speisekarte und Gastgarten.">
   <meta property="og:type" content="website">
-  <title>El Greco · Griechisches Restaurant in Neubiberg | Designvorschau</title>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=3">
+  <meta property="og:title" content="El Greco Neubiberg – Website-Designvorschau">
+  <meta property="og:description" content="Griechische Gastfreundschaft in Neubiberg – unabhängige Designvorschau.">
+  <title>El Greco Neubiberg · Griechische Gastfreundschaft | Designvorschau</title>
+  <link rel="preload" href="assets/greco-nacht.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="style-v4.css?v=4">
 </head>
 <body>
-  <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
-  <div class="demo-banner"><span class="demo-dot"></span> UNVERBINDLICHE DESIGNVORSCHAU <span class="demo-secondary">· Nicht die offizielle Website des Restaurants</span></div>
-  <header class="site-header" id="oben">
-    <div class="header-inner container">
-      <a class="brand" href="#oben" aria-label="El Greco – zur Startseite">
-        <span class="brand-mark" aria-hidden="true">✦</span>
-        <span class="brand-copy"><strong>EL GRECO</strong><small>NEUBIBERG · GRIECHISCHE GASTFREUNDSCHAFT</small></span>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <div class="preview-note"><span class="preview-dot"></span> UNVERBINDLICHER WEBSITE-ENTWURF <span class="preview-extra">· Nicht der offizielle Auftritt des Restaurants</span></div>
+
+  <header class="main-header" id="start">
+    <div class="header-inner shell">
+      <a class="identity" href="#start" aria-label="El Greco – nach oben">
+        <svg class="olive-mark" aria-hidden="true" viewBox="0 0 54 66" fill="none">
+          <path d="M9 59c13-22 18-37 37-52" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M12 51C6 50 2 44 4 38c7 2 11 7 8 13ZM18 41C10 40 7 35 8 28c7 2 11 6 10 13ZM25 31c-9-1-12-7-11-13 8 3 12 7 11 13ZM33 21c-6-5-7-12-3-17 6 6 7 12 3 17ZM15 48c5-8 12-10 17-7-4 7-10 10-17 7ZM22 37c6-9 13-11 18-7-4 7-10 11-18 7ZM30 26c5-8 11-10 17-8-3 8-9 11-17 8Z" fill="currentColor"/>
+        </svg>
+        <span class="identity-text"><strong>EL GRECO</strong><small>NEUBIBERG · GRIECHISCHE GASTFREUNDSCHAFT</small></span>
       </a>
-      <nav class="desktop-nav" aria-label="Hauptnavigation">
-        <a href="#restaurant">Unser Restaurant</a>
+      <nav class="desktop-navigation" aria-label="Hauptmenü">
+        <a href="#start">Startseite</a>
         <a href="#speisekarte">Speisekarte</a>
-        <a href="#impressionen">Impressionen</a>
-        <a href="#besuch">Anfahrt & Zeiten</a>
+        <a href="#mittagskarte" data-nav-menu="lunch">Mittagskarte</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#restaurant">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
-      <a class="button button-small button-dark header-cta" href="tel:+498960060465"><span aria-hidden="true">✆</span> Tisch reservieren</a>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <a class="header-reserve" href="tel:+498960060465"><span aria-hidden="true">♧</span> Tisch reservieren</a>
+      <button type="button" class="mobile-menu-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen"><i></i><i></i><i></i></button>
     </div>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation" hidden>
-      <a href="#restaurant">Unser Restaurant</a>
+    <nav class="mobile-navigation" id="mobile-nav" aria-label="Mobiles Hauptmenü" hidden>
+      <a href="#start">Startseite</a>
       <a href="#speisekarte">Speisekarte</a>
-      <a href="#impressionen">Impressionen</a>
-      <a href="#besuch">Anfahrt & Öffnungszeiten</a>
-      <a href="tel:+498960060465" class="mobile-call">Jetzt telefonisch reservieren ↗</a>
+      <a href="#mittagskarte" data-nav-menu="lunch">Mittagskarte</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#restaurant">Über uns</a>
+      <a href="#kontakt">Kontakt & Anfahrt</a>
+      <a class="mobile-call-link" href="tel:+498960060465">Telefonisch reservieren ↗</a>
     </nav>
   </header>
-  <main id="hauptinhalt">
+
+  <main id="inhalt">
     <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-bg" role="img" aria-label="Griechische Taverne als atmosphärisches Symbolbild"></div>
-      <div class="hero-shade"></div>
-      <div class="container hero-content">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-inner shell">
         <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> ΚΑΛΩΣ ΗΡΘΑΤΕ · WILLKOMMEN IM EL GRECO</p>
-          <h1 id="hero-heading">Kaliméra, <em>Neubiberg.</em><br>Genießen wie in Griechenland.</h1>
-          <p class="hero-sub">Ein herzliches „Jassas“, griechische Klassiker und gemeinsame Stunden, die nach Urlaub schmecken. Willkommen an unserem Tisch.</p>
+          <p class="gold-overline">Willkommen im</p>
+          <h1 id="hero-heading">EL GRECO</h1>
+          <p class="hero-lead">Griechische Gastfreundschaft<br>in Neubiberg</p>
+          <span class="little-gold-rule" aria-hidden="true"></span>
+          <p class="hero-description">Genießen Sie griechische Spezialitäten in unserem gemütlichen Restaurant mit weitläufigem Gastgarten – mit Zeit für gute Gespräche und echte Gastfreundschaft.</p>
           <div class="hero-actions">
-            <a class="button button-cream" href="#speisekarte">Speisekarte entdecken <span aria-hidden="true">↗</span></a>
-            <a class="button button-ghost" href="tel:+498960060465">Tisch reservieren <span aria-hidden="true">↗</span></a>
+            <a href="#speisekarte" class="btn btn-gold"><span aria-hidden="true">⚑</span> Speisekarte <span class="btn-arrow" aria-hidden="true">›</span></a>
+            <a href="tel:+498960060465" class="btn btn-deep"><span aria-hidden="true">▦</span> Tisch reservieren</a>
           </div>
         </div>
-        <div class="hero-stamp" aria-hidden="true"><span>Καλώς</span><span>ήρθατε</span><i>✧</i><small>HERZLICH<br>WILLKOMMEN</small></div>
-      </div>
-      <div class="hero-bottom container"><div><span class="sun-icon">☼</span> GRIECHISCHE GASTFREUNDSCHAFT SEIT VIELEN JAHREN</div><a href="#restaurant">ENTDECKEN <span aria-hidden="true">↓</span></a></div>
-    </section>
-    <div class="feature-ribbon" aria-label="Besonderheiten">
-      <div class="container ribbon-grid">
-        <div><span aria-hidden="true">✺</span><p><strong>Mit Liebe gekocht</strong><small>Klassische griechische Küche</small></p></div>
-        <div><span aria-hidden="true">❋</span><p><strong>Wunderschöner Gastgarten</strong><small>Genuss unter freiem Himmel</small></p></div>
-        <div><span aria-hidden="true">◈</span><p><strong>Auch zum Mitnehmen</strong><small>Lieblingsgerichte zu Hause genießen</small></p></div>
-      </div>
-    </div>
-    <div class="greek-key-divider" aria-hidden="true"></div><section class="intro-section section" id="restaurant" aria-labelledby="intro-heading">
-      <div class="container intro-grid">
-        <div class="intro-visual">
-          <div class="intro-photo photo-frame"><img src="https://images.unsplash.com/photo-1763647818263-62a9256f097c?auto=format&fit=crop&w=1100&q=85" alt="Griechischer Grillteller mit Pita, Symbolfoto" loading="lazy"></div>
-          <div class="intro-detail"><span class="detail-ornament">✧</span><span>ΦΙΛΟΞΕΝΙΑ<br>GASTFREUNDSCHAFT</span></div>
-        </div>
-        <div class="intro-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> EIN ORT ZUM ANKOMMEN</p>
-          <h2 id="intro-heading">Mit Herz.<br>Mit <em>Filoxenía.</em></h2>
-          <div class="line-decoration"><span>✧</span></div>
-          <p class="lead">Filoxenía – so heißt Gastfreundschaft auf Griechisch. Im El Greco geht es um genau das: gemeinsam essen, lachen und sich willkommen fühlen.</p>
-          <p>Ob gemütliches Mittagessen, ein Abend mit Freunden oder gemeinsame Stunden im Gastgarten: Hier bleibt man gerne ein bisschen länger.</p>
-          <a class="text-link" href="#besuch">Das Restaurant besuchen <span aria-hidden="true">↗</span></a>
-          <div class="signature"><span>Με αγάπη</span><small>MIT LIEBE · EL GRECO</small></div>
+        <div class="hero-badge" aria-label="Griechische Spezialitäten mit Liebe zubereitet">
+          <span>Griechische<br>Spezialitäten<br>mit Liebe<br>zubereitet</span>
+          <svg aria-hidden="true" viewBox="0 0 75 31" fill="none"><path d="M5 25C27 7 49 7 69 24M37 27V4M25 19l-6-10M48 19l7-10" stroke="currentColor" stroke-width="1.2"/></svg>
         </div>
       </div>
+      <div class="hero-rip" aria-hidden="true"></div>
     </section>
-    <div class="greek-key-divider" aria-hidden="true"></div><section class="signature-section section" aria-labelledby="signature-heading">
-      <div class="container">
-        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> ΕΛΛΗΝΙΚΗ ΚΟΥΖΙΝΑ · UNSERE KÜCHE</p><span class="section-index">01 / KULINARIK</span></div>
-        <div class="section-heading-row"><h2 id="signature-heading">Ein Hauch Ägäis<br>auf dem <em>Teller.</em></h2><p>Kräftige Aromen, vertraute Rezepte und die Freude am gemeinsamen Genießen. Entdecken Sie einen kleinen Vorgeschmack.</p></div>
-        <div class="dish-grid">
-          <article class="dish-card">
-            <div class="dish-image"><img src="https://images.unsplash.com/photo-1763647818263-62a9256f097c?auto=format&fit=crop&w=900&q=82" alt="Griechische Grillplatte, Symbolbild" loading="lazy"><span class="dish-no">01</span></div>
-            <div class="dish-bottom"><div><small>VOM GRILL</small><h3>Griechische Grillklassiker</h3></div><span aria-hidden="true">↗</span></div>
-          </article>
-          <article class="dish-card">
-            <div class="dish-image"><img src="https://images.unsplash.com/photo-1769481614068-47cfb4d1f125?auto=format&fit=crop&w=900&q=82" alt="Griechischer Salat mit Feta, Symbolbild" loading="lazy"><span class="dish-no">02</span></div>
-            <div class="dish-bottom"><div><small>FRISCH & MEDITERRAN</small><h3>Salate & vegetarische Küche</h3></div><span aria-hidden="true">↗</span></div>
-          </article>
-          <article class="dish-card">
-            <div class="dish-image"><img src="https://images.unsplash.com/photo-1750874695064-f851719d1858?auto=format&fit=crop&w=900&q=82" alt="Mediterrane Vorspeisen und Dips, Symbolbild" loading="lazy"><span class="dish-no">03</span></div>
-            <div class="dish-bottom"><div><small>ZUM TEILEN</small><h3>Meze & Vorspeisen</h3></div><span aria-hidden="true">↗</span></div>
-          </article>
+
+    <section class="showcase-section" id="speisekarte" aria-labelledby="showcase-heading">
+      <div class="shell">
+        <div class="section-heading center">
+          <p class="section-overline"><span></span> Unsere Speisekarte <span></span></p>
+          <h2 id="showcase-heading">Entdecken Sie unsere <em>Spezialitäten</em></h2>
+          <p>Von Meze und griechischen Klassikern bis zu Spezialitäten aus dem Meer.</p>
         </div>
-        <p class="image-note">Die gezeigten Speisefotos sind illustrative Beispielbilder und zeigen nicht notwendigerweise Gerichte des Restaurants.</p>
+        <div class="category-grid" aria-label="Speisekartenbereiche">
+          <a href="#vollstaendige-karte" class="category-card" data-pick="vorspeisen">
+            <div class="category-image"><img src="assets/greco-meeresfruechte.jpg" alt="Echte mediterrane Vorspeise aus dem El Greco" loading="lazy"></div>
+            <span class="category-info"><strong>Vorspeisen</strong><small>Meze & kleine Spezialitäten</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="salate">
+            <div class="category-image"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=82" alt="Frischer mediterraner Salat – Symbolfoto" loading="lazy"></div>
+            <span class="category-info"><strong>Salate</strong><small>Frisch & mediterran</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="hauptspeisen">
+            <div class="category-image"><img src="assets/greco-grill.jpg" alt="Originales Grillgericht aus dem El Greco" loading="lazy"></div>
+            <span class="category-info"><strong>Hauptspeisen</strong><small>Griechische Klassiker</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="fisch">
+            <div class="category-image"><img src="assets/greco-meeresfruechte.jpg" alt="Originale Muschelplatte aus dem El Greco" loading="lazy"></div>
+            <span class="category-info"><strong>Fischgerichte</strong><small>Frisch aus dem Meer</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="backofen">
+            <div class="category-image"><img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=82" alt="Überbackenes Ofengericht – Symbolfoto" loading="lazy"></div>
+            <span class="category-info"><strong>Aus dem Backofen</strong><small>Herzhafte Gerichte</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="kinder">
+            <div class="category-image"><img src="assets/greco-grill.jpg" alt="Grillgericht mit Beilagen, Originalfoto El Greco" loading="lazy"></div>
+            <span class="category-info"><strong>Kindergerichte</strong><small>Für unsere kleinen Gäste</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="nachspeisen">
+            <div class="category-image"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=82" alt="Süße Nachspeise – beispielhaftes Symbolfoto" loading="lazy"></div>
+            <span class="category-info"><strong>Nachspeisen</strong><small>Vor Ort erfragen</small><span aria-hidden="true">›</span></span>
+          </a>
+          <a href="#vollstaendige-karte" class="category-card" data-pick="mittagsgerichte">
+            <div class="category-image"><img src="assets/greco-terrasse.jpg" alt="Originalfoto des Gastgartens im El Greco" loading="lazy"></div>
+            <span class="category-info"><strong>Mittagskarte</strong><small>Mo – Fr · 27 Gerichte</small><span aria-hidden="true">›</span></span>
+          </a>
+        </div>
       </div>
     </section>
-    <div class="greek-key-divider" aria-hidden="true"></div><section class="menu-section section" id="speisekarte" aria-labelledby="menu-heading">
-      <div class="greek-menu-pattern" aria-hidden="true"></div>
-      <div class="container">
-        <div class="center-title"><p class="eyebrow light"><span class="eyebrow-line"></span> EIN BLICK AUF UNSERE AUSWAHL <span class="eyebrow-line"></span></p><h2 id="menu-heading">Unsere <em>Speisekarte.</em></h2><p>Guten Appetit! Die komplette Auswahl der regulären Karte und die Mittagsangebote – jetzt übersichtlich mit allen Preisen und Gerichtnummern.</p></div>
-        <div class="menu-catalogue-shell">
-          <div class="catalogue-tabs" role="tablist" aria-label="Speisekarte wählen">
-            <button type="button" role="tab" class="catalogue-tab is-active" data-menu-view="regular" aria-selected="true">Reguläre Karte <small>100 Positionen</small></button>
-            <button type="button" role="tab" class="catalogue-tab" data-menu-view="lunch" aria-selected="false">Mittagskarte <small>27 Gerichte · Mo–Fr</small></button>
+
+    <section class="mood-strip" id="galerie" aria-label="Eindrücke aus dem Restaurant">
+      <div class="mood-photo mood-food"><img src="assets/greco-grill.jpg" alt="Originales Gericht des El Greco: Grillfleisch mit Beilagen" loading="lazy"><span>Einfach genießen.</span></div>
+      <div class="mood-slogan"><svg viewBox="0 0 140 160" aria-hidden="true"><path d="M28 145C62 101 67 47 121 12M54 98C29 88 26 57 37 45c23 15 27 33 17 53ZM72 79C95 50 120 50 128 56c-14 24-33 31-56 23ZM86 53C70 40 69 21 76 10c18 13 21 29 10 43Z" fill="none" stroke="currentColor" stroke-width="2"/></svg><p>Authentisch.<br>Frisch. Griechisch.</p><small>EL GRECO · NEUBIBERG</small></div>
+      <div class="mood-photo"><img src="assets/greco-terrasse.jpg" alt="Originalaufnahme: Sonniger Gastgarten des El Greco" loading="lazy"><span>Ein Ort zum Wohlfühlen.</span></div>
+    </section>
+
+    <section class="menu-section shell" id="vollstaendige-karte" aria-labelledby="full-menu-heading">
+      <div class="section-heading center">
+        <p class="section-overline"><span></span> Alle Gerichte & Preise <span></span></p>
+        <h2 id="full-menu-heading">Die komplette <em>Speisekarte</em></h2>
+        <p>In Ruhe auswählen – gut lesbar und nach Bereichen sortiert.</p>
+      </div>
+      <div class="menu-tabs" role="tablist" aria-label="Speisekartenbereiche auswählen">
+        <button role="tab" type="button" class="menu-tab is-active" data-menu-tab="vorspeisen" aria-selected="true">Vorspeisen</button>
+        <button role="tab" type="button" class="menu-tab" data-menu-tab="hauptspeisen" aria-selected="false">Hauptspeisen</button>
+        <button role="tab" type="button" class="menu-tab" data-menu-tab="nachspeisen" aria-selected="false">Nachspeisen</button>
+        <button role="tab" type="button" class="menu-tab" data-menu-tab="mittagsgerichte" aria-selected="false">Mittagsgerichte</button>
+      </div>
+      <div class="menu-panel" id="menu-panel" role="tabpanel" tabindex="0">
+        <div class="menu-panel-head">
+          <div><p class="menu-panel-eyebrow">EL GRECO · SPEISEKARTE</p><h3 id="menu-panel-heading">Vorspeisen</h3></div>
+          <span id="menu-count" class="menu-count" aria-live="polite"></span>
+        </div>
+        <div class="subcat-nav" id="subcat-nav" aria-label="Unterkategorien"></div>
+        <div class="menu-items" id="menu-items" aria-live="polite" aria-atomic="false"></div>
+        <div class="dessert-note" id="dessert-note" hidden>
+          <span aria-hidden="true">✧</span>
+          <h4>Etwas Süßes zum Abschluss?</h4>
+          <p>In der bereitgestellten Speisekarte sind keine Nachspeisen aufgeführt. Fragen Sie unser Serviceteam gerne nach dem aktuellen Dessertangebot.</p>
+          <a href="tel:+498960060465" class="simple-link">Jetzt telefonisch nachfragen →</a>
+        </div>
+        <div class="menu-foot">
+          <p id="menu-detail">Gerichte und Preise nach dem Stand der bereitgestellten Restaurant-Speisekarte. Änderungen und Druckfehler vorbehalten.</p>
+          <p><strong>Allergene und Zusatzstoffe:</strong> Bitte erkundigen Sie sich beim Restaurantpersonal. Die verbindlichen Allergenhinweise der Originalkarte sind hier nicht vollständig dargestellt.</p>
+        </div>
+      </div>
+      <p class="menu-legal">Designvorschau: Menüangaben aus den bereitgestellten Fotos der Restaurantwebsite, noch nicht vom Betreiber auf Aktualität bestätigt.</p>
+    </section>
+
+    <section class="welcome-section" id="restaurant" aria-labelledby="welcome-heading">
+      <div class="shell welcome-inner">
+        <div class="welcome-photo"><img src="assets/greco-terrasse.jpg" alt="Echter Gastgarten im El Greco Neubiberg" loading="lazy"><span>Unser Gastgarten</span></div>
+        <div class="welcome-copy">
+          <p class="section-overline left"><span></span> Filoxenía · Gastfreundschaft</p>
+          <h2 id="welcome-heading">Ein kleines Stück<br><em>Griechenland.</em><br>Ganz nah.</h2>
+          <p class="intro-text">Ein Essen bei Freunden, ein langer Sommerabend und der Duft griechischer Spezialitäten: Im El Greco trifft traditionelle Küche auf echtes Wohlfühlen.</p>
+          <p>Ob Mittagessen, Abend zu zweit oder geselliges Beisammensein mit der Familie – wir freuen uns auf Ihren Besuch in Neubiberg.</p>
+          <a class="underline-link" href="#kontakt">Anfahrt & Öffnungszeiten <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontakt" aria-labelledby="contact-heading">
+      <div class="shell">
+        <div class="section-heading center">
+          <p class="section-overline"><span></span> Besuch & Reservierung <span></span></p>
+          <h2 id="contact-heading">Wir freuen uns <em>auf Sie.</em></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span class="contact-symbol" aria-hidden="true">⌖</span>
+            <h3>Hier finden Sie uns</h3>
+            <p>Werner-Heisenberg-Weg 2<br>85579 Neubiberg</p>
+            <a class="underline-link" href="https://www.google.com/maps/search/?api=1&query=El%20Greco%20Werner-Heisenberg-Weg%202%2085579%20Neubiberg" target="_blank" rel="noopener noreferrer">Route planen ↗</a>
           </div>
-          <div class="catalogue-controls" role="search" aria-label="Speisekarte durchsuchen">
-            <div class="catalogue-field">
-              <label for="catalogue-search">Gericht suchen</label>
-              <input id="catalogue-search" type="search" placeholder="z. B. Gyros, Lamm, 69 …" autocomplete="off">
-            </div>
-            <div class="catalogue-field">
-              <label for="catalogue-category">Kategorie</label>
-              <select id="catalogue-category"><option value="all">Alle Kategorien</option></select>
-            </div>
-            <button id="catalogue-clear" class="catalogue-reset" type="button">Zurücksetzen ↺</button>
+          <div class="contact-card">
+            <span class="contact-symbol" aria-hidden="true">☎</span>
+            <h3>Reservieren</h3>
+            <p>Ein Anruf genügt. Wir freuen uns auf Ihre Reservierung.</p>
+            <a class="underline-link" href="tel:+498960060465">089 / 60 06 04 65 ↗</a>
           </div>
-          <div class="catalogue-results-top"><span id="catalogue-count">Speisekarte wird geladen …</span><span class="catalogue-pricing">Alle Preise in Euro · inkl. MwSt.</span></div>
-          <div id="catalogue-results" class="full-menu-results" aria-live="polite" aria-atomic="false"></div>
-          <div id="catalogue-empty" class="catalogue-empty" hidden>Zu dieser Suche gibt es keine Treffer. Probiere eine andere Bezeichnung oder wähle „Alle Kategorien“.</div>
-          <p id="catalogue-notices" class="catalogue-notices">Preise gemäß Original-Speisekarte der Restaurantwebsite, vor Verwendung bitte bestätigen.</p>
-          <p class="catalogue-allergens"><strong>Hinweis zu Allergenen und Zusatzstoffen:</strong> Die Originalkarte enthält Allergene- und Zusatzstoffkennzeichnungen. Für die verbindliche Auskunft zu Zutaten und Allergenen bitte das Restaurantpersonal ansprechen. Die Angaben auf dieser Designvorschau ersetzen keine Allergenberatung.</p>
-        </div>
-        <div class="menu-ctas">
-          <a href="tel:+498960060465" class="button button-cream">Fragen zur Speisekarte? Anrufen <span aria-hidden="true">↗</span></a>
-          <a href="https://www.elgreco-neubiberg.de/" target="_blank" rel="noopener noreferrer" class="button button-outline-light">Bisherige Website öffnen <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-    <div class="greek-key-divider" aria-hidden="true"></div><section class="moment-section section" id="impressionen" aria-labelledby="moment-heading">
-      <div class="container">
-        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> KLEINE AUSZEIT · GROSSER GENUSS</p><span class="section-index">02 / ATMOSPHÄRE</span></div>
-        <div class="section-heading-row"><h2 id="moment-heading">Jassas!<br><em>Wie im Urlaub.</em></h2><p>Ein gutes Essen schmeckt noch besser, wenn man es teilt. Machen Sie es sich gemütlich und genießen Sie den Moment.</p></div>
-        <div class="gallery-grid">
-          <button class="gallery-card gallery-a" data-caption="Ein besonderer Abend – atmosphärisches Symbolbild" type="button" aria-label="Bild vergrößern: Gemütliche Restaurantatmosphäre"><img src="https://images.unsplash.com/photo-1782229296742-42521b0a257d?auto=format&fit=crop&w=1200&q=82" alt="Griechische Taverne, Symbolbild" loading="lazy"><span>ANSEHEN ↗</span></button>
-          <button class="gallery-card gallery-b" data-caption="Gemeinsam genießen – mediterrane Kulinarik, Symbolbild" type="button" aria-label="Bild vergrößern: Mediterrane Speisen"><img src="https://images.unsplash.com/photo-1769481614068-47cfb4d1f125?auto=format&fit=crop&w=900&q=82" alt="Frische mediterrane Speisen, Beispielbild" loading="lazy"><span>ANSEHEN ↗</span></button>
-          <button class="gallery-card gallery-c" data-caption="Herzliches Zusammensein – Symbolbild" type="button" aria-label="Bild vergrößern: Restaurantambiente"><img src="https://images.unsplash.com/photo-1634736794027-3297ad344057?auto=format&fit=crop&w=900&q=82" alt="Terrasse auf Santorini, Symbolbild" loading="lazy"><span>ANSEHEN ↗</span></button>
-        </div>
-        <div class="gallery-footer"><p>Symbolbilder zur Präsentation des Designs. Originalfotos des El Greco können später eingesetzt werden.</p><a href="https://www.elgreco-neubiberg.de/bilder.html" target="_blank" rel="noopener noreferrer" class="text-link">Bilder auf der bisherigen Website <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
-    <section class="quote-section" aria-label="Griechische Gastfreundschaft">
-      <div class="container quote-inner">
-        <span class="quote-star" aria-hidden="true">✧</span>
-        <p>„Die schönsten Abende beginnen<br>an einem <em>gemeinsamen Tisch.</em>“</p>
-        <span class="quote-line"></span><small>ESSEN · LACHEN · ZUSAMMENSEIN</small>
-      </div>
-    </section>
-    <div class="greek-key-divider" aria-hidden="true"></div><section class="visit-section section" id="besuch" aria-labelledby="visit-heading">
-      <div class="container visit-grid">
-        <div>
-          <p class="eyebrow"><span class="eyebrow-line"></span> WIR FREUEN UNS AUF SIE</p>
-          <h2 id="visit-heading">Ihr Platz ist<br>schon <em>fast gedeckt.</em></h2>
-          <p class="visit-intro">Ob ein spontaner Besuch oder ein besonderer Anlass – rufen Sie gerne an und reservieren Sie Ihren Tisch.</p>
-          <div class="visit-cards">
-            <div class="visit-card"><span class="visit-icon" aria-hidden="true">⌖</span><div><h3>Hier finden Sie uns</h3><p>Werner-Heisenberg-Weg 2<br>85579 Neubiberg</p><a href="https://www.google.com/maps/search/?api=1&query=El%20Greco%20Werner-Heisenberg-Weg%202%2085579%20Neubiberg" target="_blank" rel="noopener noreferrer">Route planen ↗</a></div></div>
-            <div class="visit-card"><span class="visit-icon" aria-hidden="true">✆</span><div><h3>Reservierungen</h3><p>Am besten direkt telefonisch.</p><a href="tel:+498960060465">089 / 60 06 04 65 ↗</a></div></div>
+          <div class="contact-card hours">
+            <span class="contact-symbol" aria-hidden="true">◷</span>
+            <h3>Öffnungszeiten</h3>
+            <p><b>Montag – Samstag</b><br>11:30–14:30 Uhr & 17:30–23:00 Uhr</p>
+            <p><b>Sonntag & Feiertage</b><br>Bitte telefonisch erfragen</p>
+            <small>Öffnungszeiten aus älteren Angaben; bitte vor dem Besuch bestätigen.</small>
           </div>
-          <a class="button button-dark visit-button" href="tel:+498960060465">Jetzt Tisch reservieren <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hours-card">
-          <div class="hours-top"><span>EL GRECO · NEUBIBERG</span><span aria-hidden="true">✧</span></div>
-          <h3>Öffnungszeiten</h3>
-          <div class="hours-row"><span>Montag – Samstag</span><div><span>11:30 – 14:30 Uhr</span><span>17:30 – 23:00 Uhr</span></div></div>
-          <div class="hours-row"><span>Sonntag & Feiertage</span><div><span>11:30 – 22:00 Uhr</span></div></div>
-          <div class="hours-rule"></div>
-          <p>Warme Küche laut bisheriger Restaurantwebsite bis 22:30 Uhr (Mo–Sa).</p>
-          <p class="hours-fine">Öffnungszeiten können abweichen. Bitte vor dem Besuch telefonisch bestätigen.</p>
-          <div class="hours-bottom"><span>ΚΑΛΗ ΟΡΕΞΗ!</span><span>GUTEN APPETIT ♡</span></div>
         </div>
       </div>
     </section>
-    <section class="last-cta" aria-label="Reservieren">
-      <div class="container last-inner"><div><p>WIR SEHEN UNS AM TISCH</p><h2>Bis bald im <em>El Greco.</em></h2></div><a href="tel:+498960060465" class="button button-cream">Tisch reservieren <span aria-hidden="true">↗</span></a></div>
-    </section>
+    <section class="last-invitation"><div class="shell invitation-inner"><div><small>KALÍ ÓREXI · GUTEN APPETIT</small><h2>Bis bald im <em>El Greco.</em></h2></div><a class="btn btn-gold" href="tel:+498960060465">Tisch telefonisch reservieren <span class="btn-arrow" aria-hidden="true">›</span></a></div></section>
   </main>
+
   <footer class="footer">
-    <div class="container footer-grid">
-      <div><a class="brand footer-brand" href="#oben"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-copy"><strong>EL GRECO</strong><small>NEUBIBERG · GRIECHISCH GENIESSEN</small></span></a><p>Traditionelle griechische Küche<br>und herzliche Gastfreundschaft<br>in Neubiberg.</p></div>
-      <div><h3>ENTDECKEN</h3><a href="#restaurant">Restaurant</a><a href="#speisekarte">Speisekarte</a><a href="#impressionen">Impressionen</a><a href="#besuch">Kontakt & Anfahrt</a></div>
-      <div><h3>KONTAKT</h3><a href="tel:+498960060465">089 / 60 06 04 65</a><a href="https://www.google.com/maps/search/?api=1&query=El%20Greco%20Werner-Heisenberg-Weg%202%2085579%20Neubiberg" target="_blank" rel="noopener noreferrer">Werner-Heisenberg-Weg 2<br>85579 Neubiberg ↗</a></div>
-      <div><h3>INFORMATION</h3><a href="https://www.elgreco-neubiberg.de/impressum.html" target="_blank" rel="noopener noreferrer">Impressum der Bestandsseite ↗</a><button type="button" id="privacy-open" class="footer-button">Datenschutzhinweis dieser Vorschau</button><a href="https://www.elgreco-neubiberg.de/" target="_blank" rel="noopener noreferrer">Offizielle Bestandswebsite ↗</a></div>
+    <div class="shell footer-grid">
+      <div><a class="identity footer-identity" href="#start"><svg class="olive-mark" aria-hidden="true" viewBox="0 0 54 66" fill="none"><path d="M9 59c13-22 18-37 37-52" stroke="currentColor" stroke-width="1.8"/><path d="M12 51C6 50 2 44 4 38c7 2 11 7 8 13ZM18 41C10 40 7 35 8 28c7 2 11 6 10 13ZM25 31c-9-1-12-7-11-13 8 3 12 7 11 13ZM33 21c-6-5-7-12-3-17 6 6 7 12 3 17ZM15 48c5-8 12-10 17-7-4 7-10 10-17 7ZM22 37c6-9 13-11 18-7-4 7-10 11-18 7ZM30 26c5-8 11-10 17-8-3 8-9 11-17 8Z" fill="currentColor"/></svg><span class="identity-text"><strong>EL GRECO</strong><small>NEUBIBERG</small></span></a><p>Griechische Küche und herzliches Willkommen in Neubiberg.</p></div>
+      <div><h3>Entdecken</h3><a href="#speisekarte">Speisekarte</a><a href="#mittagskarte" data-nav-menu="lunch">Mittagskarte</a><a href="#restaurant">Unser Restaurant</a><a href="#kontakt">Besuch & Anfahrt</a></div>
+      <div><h3>Kontakt</h3><a href="tel:+498960060465">089 / 60 06 04 65</a><a href="https://www.google.com/maps/search/?api=1&query=El%20Greco%20Werner-Heisenberg-Weg%202%2085579%20Neubiberg" target="_blank" rel="noopener noreferrer">Werner-Heisenberg-Weg 2<br>85579 Neubiberg ↗</a></div>
+      <div><h3>Hinweise</h3><a href="https://www.elgreco-neubiberg.de/" rel="noopener noreferrer" target="_blank">Bisherige Restaurantwebsite ↗</a><button id="notice-button" class="footer-notice-button" type="button">Rechtliche Hinweise zur Vorschau</button><p class="footer-preview">Die Rechte der verwendeten Restaurant- und Google-Fotos sind vor einem kommerziellen Einsatz zu klären.</p></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year">2026</span> El Greco · Unverbindliche Designvorschau</span><span>Nicht vom Restaurant beauftragte oder freigegebene Website · Inhalte vor Livegang abzustimmen.</span></div>
+    <div class="shell foot-bottom"><span>© <span id="year">2026</span> El Greco · unabhängige Designvorschau</span><span>Kein offizieller oder freigegebener Internetauftritt</span></div>
   </footer>
-  <div class="mobile-bottom" aria-label="Schnellaktionen"><a href="#speisekarte"><span aria-hidden="true">≡</span> SPEISEKARTE</a><a href="tel:+498960060465"><span aria-hidden="true">✆</span> RESERVIEREN</a></div>
-  <dialog class="lightbox" id="lightbox" aria-label="Bildansicht"><button type="button" id="lightbox-close" aria-label="Bild schließen" class="dialog-close">✕</button><img id="lightbox-image" src="" alt=""><p id="lightbox-caption"></p></dialog>
-  <dialog class="privacy-dialog" id="privacy-dialog" aria-labelledby="privacy-heading"><button type="button" class="dialog-close" id="privacy-close" aria-label="Schließen">✕</button><h2 id="privacy-heading">Datenschutzhinweis zur Designvorschau</h2><p>Dies ist eine unabhängige, unverbindliche Demonstrationswebsite und nicht der offizielle Internetauftritt des Restaurants El Greco.</p><p>Die Vorschau enthält keine eigenen Kontaktformulare, kein Nutzerkonto, kein Tracking und keine eigenen Cookies. GitHub Pages stellt die Website technisch bereit und kann technische Zugriffsdaten verarbeiten. Fotos werden von Unsplash als externem Bildanbieter geladen; dabei kann die IP-Adresse an diesen Anbieter übermittelt werden. Die Links zu Google Maps und zur bisherigen Restaurantwebsite werden erst beim Anklicken aufgerufen.</p><p>Vor einer offiziellen Nutzung müssen Bildmaterial, Datenschutzerklärung, Impressum, Öffnungszeiten und die Speisekarte mit dem Restaurant abgestimmt werden.</p></dialog>
-  <script src="app.js?v=2" defer></script>
-  <script src="menu.js?v=3" defer></script>
-  <script src="menu-view.js?v=3" defer></script>
+  <div class="sticky-mobile-actions"><a href="#speisekarte" aria-label="Speisekarte öffnen"><span aria-hidden="true">☷</span> Speisekarte</a><a href="tel:+498960060465"><span aria-hidden="true">☎</span> Reservieren</a></div>
+  <dialog id="notice-dialog" aria-labelledby="notice-title"><button class="close-dialog" id="notice-close" type="button" aria-label="Schließen">✕</button><h2 id="notice-title">Hinweise zur Website-Demo</h2><p>Dies ist ein unabhängiger Gestaltungsentwurf, nicht die offizielle Website oder eine beauftragte Veröffentlichung durch das Restaurant.</p><p>Gerichte, Preise und Öffnungszeiten wurden aus bereitgestelltem Material übertragen und sind noch zu bestätigen. Für die abgebildeten Restaurantfotos ist vor der kommerziellen Nutzung die Zustimmung der jeweiligen Rechteinhaber erforderlich. Einzelne Kategoriebilder sind Symbolfotos.</p><p>Die Website enthält keine eigenen Tracking-Cookies und kein Reservierungsformular. Für die Bildübermittlung externer Symbolfotos wird Unsplash verwendet; dabei können technische Zugriffsdaten an den Anbieter gelangen. GitHub Pages kann technische Zugriffsdaten zur Auslieferung verarbeiten. Externe Karten- und Restaurantlinks werden erst beim Anklicken aufgerufen. Ein rechtlich vollständiges Impressum und eine Datenschutzerklärung sind vor Freigabe mit dem Betreiber zu erstellen.</p></dialog>
+  <script src="menu.js?v=4" defer></script>
+  <script src="site-v4.js?v=4" defer></script>
 </body>
 </html>
