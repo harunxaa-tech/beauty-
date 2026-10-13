@@ -167,6 +167,27 @@ document.querySelectorAll('[data-nav-menu="lunch"]').forEach(link=>link.addEvent
  closeMobile();
  document.getElementById("vollstaendige-karte")?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth",block:"start"});
 }));
+// Original restaurant photographs: full-size view with native dialog, no dependencies.
+const galleryDialog=document.getElementById("gallery-lightbox");
+const galleryDialogImage=document.getElementById("gallery-lightbox-image");
+const galleryDialogTitle=document.getElementById("gallery-lightbox-title");
+const galleryClose=document.getElementById("gallery-lightbox-close");
+if(galleryDialog&&galleryDialogImage&&galleryDialogTitle&&galleryClose&&typeof galleryDialog.showModal==="function"){
+ document.querySelectorAll("[data-gallery-full]").forEach(function(tile){
+   tile.addEventListener("click",function(){
+     const source=tile.getAttribute("data-gallery-full");
+     if(!source||!source.startsWith("assets/elgreco-"))return;
+     const image=tile.querySelector("img");
+     galleryDialogImage.src=source;
+     galleryDialogImage.alt=image?.alt||"Originalaufnahme El Greco";
+     galleryDialogTitle.textContent=tile.getAttribute("data-gallery-title")||"El Greco Neubiberg";
+     galleryDialog.showModal();
+   });
+ });
+ galleryClose.addEventListener("click",()=>galleryDialog.close());
+ galleryDialog.addEventListener("click",function(e){if(e.target===galleryDialog)galleryDialog.close()});
+ galleryDialog.addEventListener("close",function(){galleryDialogImage.removeAttribute("src")});
+}
 const dialog=document.getElementById("notice-dialog");
 if(dialog&&typeof dialog.showModal==="function"){
  const open=document.getElementById("notice-button");
