@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <title>El Greco · Griechisches Restaurant in Neubiberg | Designvorschau</title>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#hauptinhalt">Zum Inhalt springen</a>
@@ -105,28 +105,32 @@
     <div class="greek-key-divider" aria-hidden="true"></div><section class="menu-section section" id="speisekarte" aria-labelledby="menu-heading">
       <div class="greek-menu-pattern" aria-hidden="true"></div>
       <div class="container">
-        <div class="center-title"><p class="eyebrow light"><span class="eyebrow-line"></span> EIN BLICK AUF UNSERE AUSWAHL <span class="eyebrow-line"></span></p><h2 id="menu-heading">Kali <em>Órexi!</em></h2><p>Guten Appetit! Von Meze über Gyros bis zum Bauernsalat – ein kleiner Einblick in die griechische Küche.</p></div>
-        <div class="menu-filters" role="group" aria-label="Speisekarte filtern">
-          <button class="filter-button active" data-filter="alle" aria-pressed="true" type="button">Alle</button>
-          <button class="filter-button" data-filter="vorspeisen" aria-pressed="false" type="button">Vorspeisen</button>
-          <button class="filter-button" data-filter="grill" aria-pressed="false" type="button">Vom Grill</button>
-          <button class="filter-button" data-filter="vegetarisch" aria-pressed="false" type="button">Vegetarisch</button>
-          <button class="filter-button" data-filter="fisch" aria-pressed="false" type="button">Fisch</button>
+        <div class="center-title"><p class="eyebrow light"><span class="eyebrow-line"></span> EIN BLICK AUF UNSERE AUSWAHL <span class="eyebrow-line"></span></p><h2 id="menu-heading">Unsere <em>Speisekarte.</em></h2><p>Guten Appetit! Die komplette Auswahl der regulären Karte und die Mittagsangebote – jetzt übersichtlich mit allen Preisen und Gerichtnummern.</p></div>
+        <div class="menu-catalogue-shell">
+          <div class="catalogue-tabs" role="tablist" aria-label="Speisekarte wählen">
+            <button type="button" role="tab" class="catalogue-tab is-active" data-menu-view="regular" aria-selected="true">Reguläre Karte <small>100 Positionen</small></button>
+            <button type="button" role="tab" class="catalogue-tab" data-menu-view="lunch" aria-selected="false">Mittagskarte <small>27 Gerichte · Mo–Fr</small></button>
+          </div>
+          <div class="catalogue-controls" role="search" aria-label="Speisekarte durchsuchen">
+            <div class="catalogue-field">
+              <label for="catalogue-search">Gericht suchen</label>
+              <input id="catalogue-search" type="search" placeholder="z. B. Gyros, Lamm, 69 …" autocomplete="off">
+            </div>
+            <div class="catalogue-field">
+              <label for="catalogue-category">Kategorie</label>
+              <select id="catalogue-category"><option value="all">Alle Kategorien</option></select>
+            </div>
+            <button id="catalogue-clear" class="catalogue-reset" type="button">Zurücksetzen ↺</button>
+          </div>
+          <div class="catalogue-results-top"><span id="catalogue-count">Speisekarte wird geladen …</span><span class="catalogue-pricing">Alle Preise in Euro · inkl. MwSt.</span></div>
+          <div id="catalogue-results" class="full-menu-results" aria-live="polite" aria-atomic="false"></div>
+          <div id="catalogue-empty" class="catalogue-empty" hidden>Zu dieser Suche gibt es keine Treffer. Probiere eine andere Bezeichnung oder wähle „Alle Kategorien“.</div>
+          <p id="catalogue-notices" class="catalogue-notices">Preise gemäß Original-Speisekarte der Restaurantwebsite, vor Verwendung bitte bestätigen.</p>
+          <p class="catalogue-allergens"><strong>Hinweis zu Allergenen und Zusatzstoffen:</strong> Die Originalkarte enthält Allergene- und Zusatzstoffkennzeichnungen. Für die verbindliche Auskunft zu Zutaten und Allergenen bitte das Restaurantpersonal ansprechen. Die Angaben auf dieser Designvorschau ersetzen keine Allergenberatung.</p>
         </div>
-        <div class="menu-list" id="menu-results" aria-live="polite">
-          <article class="menu-item" data-category="vorspeisen"><div class="menu-item-mark">✦</div><div><h3>Zaziki</h3><p>Der griechische Klassiker zum Einstieg.</p></div><span class="menu-item-tag">MEZE</span></article>
-          <article class="menu-item" data-category="vorspeisen vegetarisch"><div class="menu-item-mark">✦</div><div><h3>Original griechischer Fetakäse</h3><p>Typisch mediterran – purer Geschmack.</p></div><span class="menu-item-tag">KÄSE</span></article>
-          <article class="menu-item" data-category="grill"><div class="menu-item-mark">✦</div><div><h3>Gyros</h3><p>Ein herzhaftes Highlight der griechischen Küche.</p></div><span class="menu-item-tag">KLASSIKER</span></article>
-          <article class="menu-item" data-category="grill"><div class="menu-item-mark">✦</div><div><h3>Suflaki</h3><p>Griechische Grillspieße, traditionell zubereitet.</p></div><span class="menu-item-tag">VOM GRILL</span></article>
-          <article class="menu-item" data-category="grill"><div class="menu-item-mark">✦</div><div><h3>Bifteki</h3><p>Würzig und herzhaft – ein beliebter Grillklassiker.</p></div><span class="menu-item-tag">VOM GRILL</span></article>
-          <article class="menu-item" data-category="vegetarisch"><div class="menu-item-mark">✦</div><div><h3>Griechischer Bauernsalat</h3><p>Frische, mediterrane Zutaten.</p></div><span class="menu-item-tag">FRISCH</span></article>
-          <article class="menu-item" data-category="fisch"><div class="menu-item-mark">✦</div><div><h3>Kalamari vom Grill</h3><p>Ein Klassiker für Liebhaber der Meeresküche.</p></div><span class="menu-item-tag">MEER</span></article>
-          <article class="menu-item" data-category="fisch"><div class="menu-item-mark">✦</div><div><h3>Fischspezialitäten</h3><p>Weitere Varianten finden Sie in der vollständigen Karte.</p></div><span class="menu-item-tag">MEER</span></article>
-        </div>
-        <p class="menu-disclaimer">Diese Auswahl ist ein unverbindlicher Auszug ohne Preisangaben. Verfügbarkeit, Zutaten, Allergene und aktuelle Preise bitte direkt beim Restaurant erfragen.</p>
         <div class="menu-ctas">
-          <a href="https://www.elgreco-neubiberg.de/speisekarte.html" target="_blank" rel="noopener noreferrer" class="button button-cream">Original-Speisekarte ansehen <span aria-hidden="true">↗</span></a>
-          <a href="https://www.elgreco-neubiberg.de/mittagskarte.html" target="_blank" rel="noopener noreferrer" class="button button-outline-light">Mittagskarte der Bestandsseite <span aria-hidden="true">↗</span></a>
+          <a href="tel:+498960060465" class="button button-cream">Fragen zur Speisekarte? Anrufen <span aria-hidden="true">↗</span></a>
+          <a href="https://www.elgreco-neubiberg.de/" target="_blank" rel="noopener noreferrer" class="button button-outline-light">Bisherige Website öffnen <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -190,5 +194,7 @@
   <dialog class="lightbox" id="lightbox" aria-label="Bildansicht"><button type="button" id="lightbox-close" aria-label="Bild schließen" class="dialog-close">✕</button><img id="lightbox-image" src="" alt=""><p id="lightbox-caption"></p></dialog>
   <dialog class="privacy-dialog" id="privacy-dialog" aria-labelledby="privacy-heading"><button type="button" class="dialog-close" id="privacy-close" aria-label="Schließen">✕</button><h2 id="privacy-heading">Datenschutzhinweis zur Designvorschau</h2><p>Dies ist eine unabhängige, unverbindliche Demonstrationswebsite und nicht der offizielle Internetauftritt des Restaurants El Greco.</p><p>Die Vorschau enthält keine eigenen Kontaktformulare, kein Nutzerkonto, kein Tracking und keine eigenen Cookies. GitHub Pages stellt die Website technisch bereit und kann technische Zugriffsdaten verarbeiten. Fotos werden von Unsplash als externem Bildanbieter geladen; dabei kann die IP-Adresse an diesen Anbieter übermittelt werden. Die Links zu Google Maps und zur bisherigen Restaurantwebsite werden erst beim Anklicken aufgerufen.</p><p>Vor einer offiziellen Nutzung müssen Bildmaterial, Datenschutzerklärung, Impressum, Öffnungszeiten und die Speisekarte mit dem Restaurant abgestimmt werden.</p></dialog>
   <script src="app.js?v=2" defer></script>
+  <script src="menu.js?v=3" defer></script>
+  <script src="menu-view.js?v=3" defer></script>
 </body>
 </html>
