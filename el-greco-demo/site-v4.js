@@ -4,16 +4,15 @@ const menu=Array.isArray(window.EL_GRECO_MENU_DATA)?window.EL_GRECO_MENU_DATA:[]
 const mainOrder={
   vorspeisen:["meze","vorspeisen","suppen","kaese","salate"],
   hauptspeisen:["vegetarisch","grill","fisch","backofen","pfanne","spaghetti","kinder","beilagen","extras"],
-  nachspeisen:[],
   mittagsgerichte:["mittagsgrill","mittagsfisch","mittagsbackofen"]
 };
-const sectionTitles={vorspeisen:"Vorspeisen & Salate",hauptspeisen:"Hauptspeisen",nachspeisen:"Nachspeisen",mittagsgerichte:"Mittagsgerichte"};
+const sectionTitles={vorspeisen:"Vorspeisen & Salate",hauptspeisen:"Hauptspeisen",mittagsgerichte:"Mittagsgerichte"};
 const items=document.getElementById("menu-items");
 const subnav=document.getElementById("subcat-nav");
 const heading=document.getElementById("menu-panel-heading");
 const count=document.getElementById("menu-count");
 const detail=document.getElementById("menu-detail");
-const dessert=document.getElementById("dessert-note");
+const lunchHours=document.getElementById("lunch-hours");
 const tabs=[...document.querySelectorAll("[data-menu-tab]")];
 const mobileToggle=document.getElementById("nav-toggle");
 const mobileNav=document.getElementById("mobile-nav");
@@ -35,8 +34,7 @@ function render(){
  if(panelSubtitle)panelSubtitle.textContent={
    vorspeisen:"Kleine Köstlichkeiten und mediterrane Frische zum gemeinsamen Genießen.",
    hauptspeisen:"Die beliebtesten Geschmacksrichtungen Griechenlands – vom Grill bis aus dem Ofen.",
-   nachspeisen:"Genussmomente für einen süßen Abschluss.",
-   mittagsgerichte:"Griechisch genießen in der Mittagspause – Montag bis Freitag."
+   mittagsgerichte:"Montag bis Freitag von 11:30 bis 14:30 Uhr – ausgenommen Feiertage."
  }[active]||"";
  for(const tab of tabs){
    const isActive=tab.dataset.menuTab===active;
@@ -45,15 +43,7 @@ function render(){
    tab.tabIndex=isActive?0:-1;
  }
  const groups=visibleGroups();
- if(active==="nachspeisen"){
-   subnav.replaceChildren();
-   items.replaceChildren();
-   dessert.hidden=false;
-   count.textContent="Auf Anfrage";
-   detail.textContent="Desserts sind auf der bereitgestellten Speisekarte nicht aufgeführt. Bitte fragen Sie das Restaurant nach dem aktuellen Angebot.";
-   return;
- }
- dessert.hidden=true;
+ if(lunchHours)lunchHours.hidden=active!=="mittagsgerichte";
  const subFrag=document.createDocumentFragment();
  function makeSub(key,label,qty){
    const b=node("button","subcat-button"+(activeSub===key?" is-active":""),null);
@@ -104,7 +94,7 @@ function render(){
  items.replaceChildren(frag);
  count.textContent=total+" "+(total===1?"Gericht":"Gerichte");
  detail.textContent=active==="mittagsgerichte"?
- "Mittagskarte laut bereitgestellter Vorlage: Montag bis Freitag, ausgenommen Feiertage. Verfügbarkeit und Preise bitte telefonisch bestätigen.":
+ "Mittagskarte: Montag bis Freitag von 11:30 bis 14:30 Uhr, ausgenommen Feiertage. Zeitangabe aus den veröffentlichten Mittagsöffnungszeiten abgeleitet; bitte beim Restaurant vor Veröffentlichung bestätigen.":
  "Reguläre Speisekarte: Preise gemäß den bereitgestellten Bildern der Restaurantwebsite. Änderungen vorbehalten.";
 }
 function setMenu(group,subcategory){
@@ -128,7 +118,6 @@ const cardRouting={
  fisch:["hauptspeisen","fisch"],
  backofen:["hauptspeisen","backofen"],
  kinder:["hauptspeisen","kinder"],
- nachspeisen:["nachspeisen","all"],
  mittagsgerichte:["mittagsgerichte","all"]
 };
 document.querySelectorAll("[data-pick]").forEach(card=>card.addEventListener("click",()=>{
