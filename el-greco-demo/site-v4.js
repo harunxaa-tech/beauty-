@@ -161,6 +161,21 @@ if(mobileNav&&mobileToggle){
  document.addEventListener("click",e=>{if(!mobileNav.hidden&&!mobileNav.contains(e.target)&&!mobileToggle.contains(e.target))closeMobile()});
  window.addEventListener("resize",()=>{if(window.innerWidth>990)closeMobile()});
 }
+// Always reach the actual top of the page, including the preview notice.
+// Using #start by itself lands on the sticky header instead of scroll position 0.
+document.querySelectorAll('a[href="#start"]').forEach(function(link){
+ link.addEventListener("click",function(event){
+   event.preventDefault();
+   closeMobile();
+   try {
+     if(window.location.hash)window.history.replaceState(window.history.state,"",window.location.pathname+window.location.search);
+   }catch(e){}
+   const root=document.documentElement,prev=root.style.scrollBehavior;
+   root.style.scrollBehavior="auto";
+   window.scrollTo(0,0);
+   root.style.scrollBehavior=prev;
+ });
+});
 document.querySelectorAll('[data-nav-menu="lunch"]').forEach(link=>link.addEventListener("click",e=>{
  e.preventDefault();
  setMenu("mittagsgerichte");
