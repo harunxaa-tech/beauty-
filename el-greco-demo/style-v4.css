@@ -1397,3 +1397,129 @@ img { max-width:100%; }
   .gallery-photo,.gallery-photo>img{transition:none!important}
 }
 /* END EL GRECO V9 */
+
+
+/* === EL GRECO V10: SHARPER AUTHENTIC HERO & FULL-WIDTH EDITORIAL FOOD GRID === */
+/* Replace the older low-resolution, dark screenshot image with a genuine daylight
+   restaurant photo originally provided by the user. A gradient, not blur, supports text. */
+.hero-photo{
+  background-image:url('assets/elgreco-interior-veranda.jpg');
+  background-position:center 49%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:saturate(1.11) contrast(1.045);
+  image-rendering:auto;
+}
+.hero-gradient{
+  background:
+    linear-gradient(90deg,rgba(2,22,36,.88) 0%,rgba(3,30,49,.78) 25%,rgba(4,35,57,.39) 57%,rgba(2,30,46,.07) 100%),
+    linear-gradient(0deg,rgba(5,29,44,.21) 0%,transparent 64%);
+}
+.hero-copy{
+  max-width:660px;
+}
+.hero h1{
+  text-shadow:0 3px 20px rgba(0,19,30,.25);
+}
+/* 4 substantial cards on the first row, 3 equally sized cards on the second.
+   7 cards fill both rows with no empty phantom 8th column. */
+@media(min-width:1001px){
+  .showcase-section{padding-top:63px;padding-bottom:84px}
+  .showcase-section .shell{width:min(calc(100% - 80px),1390px)}
+  .showcase-section .section-heading{margin-bottom:40px}
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    gap:22px;
+    width:100%;
+  }
+  .category-card{
+    display:block;
+    grid-column:span 3;
+    min-width:0;
+    border-radius:5px;
+    overflow:hidden;
+    border:1px solid #e3dccf;
+    box-shadow:0 7px 24px rgba(13,42,60,.05);
+  }
+  .category-card:nth-child(n+5){grid-column:span 4}
+  .category-image{
+    width:100%;
+    aspect-ratio:1.35;
+    min-height:0;
+    overflow:hidden;
+  }
+  .category-card:nth-child(n+5) .category-image{aspect-ratio:1.75}
+  .category-info{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 19px;
+    column-gap:10px;
+    padding:19px 20px 20px;
+    min-height:92px;
+  }
+  .category-info strong{
+    font-size:clamp(21px,1.7vw,28px);
+    line-height:1.1;
+  }
+  .category-info small{font-size:12px;line-height:1.55}
+  .category-info>span{font-size:28px}
+  .category-card:hover{
+    box-shadow:0 17px 36px rgba(10,45,69,.15);
+  }
+}
+/* Two comfortable large columns on narrower laptops and tablets. */
+@media(min-width:681px) and (max-width:1000px){
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:17px;
+  }
+  .category-card{
+    grid-column:auto;
+    border-radius:5px;
+  }
+  .category-card:last-child{
+    grid-column:1/-1;
+    display:grid;
+    grid-template-columns:42% minmax(0,1fr);
+    min-height:170px;
+  }
+  .category-card:last-child .category-image{
+    height:100%;
+    aspect-ratio:auto;
+  }
+  .category-card:last-child .category-info{align-content:center}
+  .category-image{aspect-ratio:1.65}
+  .category-info{padding:17px 18px}
+  .category-info strong{font-size:clamp(20px,2.6vw,27px)}
+  .category-info small{font-size:12px}
+}
+@media(max-width:680px){
+  .hero-photo{
+    background-image:url('assets/elgreco-interior-veranda.jpg');
+    background-position:63% center;
+    filter:saturate(1.07) contrast(1.04);
+  }
+  .hero-gradient{
+    background:linear-gradient(90deg,rgba(0,18,35,.82),rgba(4,32,48,.52)),
+      linear-gradient(0deg,rgba(0,16,29,.70),transparent 78%);
+  }
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:11px;
+  }
+  .category-card{grid-column:auto;min-width:0}
+  .category-card:last-child{grid-column:1/-1}
+  .category-card:last-child .category-image{min-width:0}
+}
+/* Stronger visible organization for desktop menu, without changing dish data. */
+@media(min-width:1100px){
+  .menu-section.shell{width:min(calc(100% - 80px),1390px);max-width:1390px}
+  .menu-panel{padding-left:42px;padding-right:42px}
+  .menu-panel-head{margin-left:-42px;margin-right:-42px}
+  .group-dishes{gap:18px 24px}
+  .menu-dish{min-height:150px;padding:25px 27px 26px 30px}
+  .menu-dish h4{font-size:clamp(21px,1.6vw,26px)}
+}
+/* === END V10 === */
