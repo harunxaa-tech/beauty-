@@ -933,3 +933,208 @@ img { max-width:100%; }
   .category-grid .category-card:last-child .category-image{min-height:120px;}
   .category-grid .category-card:last-child .category-info strong{font-size:17px;}
 }
+
+
+/* === EL GRECO V8 EDITORIAL MENU — refined taverna carte === */
+/* Avoid the look of an online-shop product catalog. */
+.menu-section{
+  background:linear-gradient(180deg,#faf7f0 0%,#fffdf9 47%,#f8f5ef 100%);
+}
+.menu-section .section-heading h2 em{color:#a4753d}
+.menu-tabs{margin-bottom:7px}
+.menu-tab{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.menu-panel{
+  border:1px solid #e5dac8;
+  background:#fffcf7;
+  box-shadow:0 24px 70px rgba(28,44,54,.09);
+}
+.menu-items{
+  position:relative;
+}
+.menu-group{
+  margin:0 0 47px;
+  padding-bottom:0;
+}
+.group-header{
+  margin:12px 0 20px;
+  padding:12px 0 19px;
+  border-bottom:1px solid #c4a06d;
+  gap:14px;
+}
+.group-kicker{
+  font-size:10px;
+  letter-spacing:.22em;
+  color:#ae8651;
+}
+.group-title{
+  font-size:clamp(28px,2.85vw,40px);
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+.group-decoration{
+  font-size:34px;
+  color:#b99461;
+}
+.group-dishes{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px 22px;
+  align-items:stretch;
+}
+.menu-dish{
+  position:relative;
+  border:1px solid #ece3d5;
+  border-radius:5px;
+  padding:24px 25px 21px 29px;
+  min-width:0;
+  gap:0;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(120deg,#ffffff 0%,#fffefb 100%);
+  box-shadow:0 5px 19px rgba(30,47,59,.03);
+  overflow:hidden;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.menu-dish::before{
+  content:"";
+  display:block;
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  border-radius:0;
+  background:linear-gradient(180deg,#d9bc8a,#b4884a,#d9bc8a);
+}
+.menu-dish::after{
+  content:"";
+  position:absolute;
+  right:17px;
+  bottom:15px;
+  width:19px;
+  height:19px;
+  opacity:.25;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19'%3E%3Cpath d='M9.5 0L11.7 7.3 19 9.5 11.7 11.7 9.5 19 7.3 11.7 0 9.5 7.3 7.3z' fill='none' stroke='%23b18e60' stroke-width='1'/%3E%3C/svg%3E");
+  background-size:contain;
+}
+.menu-dish:hover{
+  transform:translateY(-3px);
+  background:#fff;
+  border-color:#cdb083;
+  box-shadow:0 15px 34px rgba(22,50,68,.1);
+}
+.dish-meta{
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:0 0 13px;
+}
+.menu-num{
+  font-size:9px;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.19em;
+  color:#a58c66;
+}
+.menu-price{
+  border:1px solid #dec69f;
+  border-radius:4px;
+  padding:9px 12px;
+  background:#f5eddf;
+  color:#153b58;
+  font-size:16px;
+  letter-spacing:.005em;
+  font-weight:750;
+  font-variant-numeric:tabular-nums;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+.menu-dish-text{gap:9px;padding-right:8px}
+.menu-dish h4{
+  color:#123856;
+  font:400 clamp(21px,1.9vw,27px)/1.24 Georgia,'Times New Roman',serif;
+  margin:0;
+  overflow-wrap:break-word;
+  text-wrap:pretty;
+}
+.menu-dish p{
+  font-size:12px;
+  line-height:1.7;
+  color:#78818a;
+  padding-right:15px;
+  margin:0;
+  hyphens:auto;
+}
+.menu-panel-description{max-width:550px}
+.subcat-mobile-chooser{display:none}
+.subcat-nav{padding:26px 0 22px}
+.subcat-button{
+  background:#f8f5ee;
+  border-color:#dfd2be;
+  box-shadow:inset 0 1px 0 #fff;
+  color:#415a6f;
+}
+.subcat-button:hover{background:#f1e7d6;border-color:#c3a67a}
+.subcat-button.is-active{
+  background:#0f436b;
+  border-color:#0f436b;
+  box-shadow:0 5px 13px rgba(22,55,81,.12);
+}
+.menu-foot{border-top:1px solid #d7c6ab}
+@media(max-width:850px){
+ .group-dishes{grid-template-columns:1fr;gap:13px}
+ .menu-dish{padding:21px 23px 23px 26px}
+ .menu-dish h4{font-size:25px}
+ .menu-price{font-size:15px}
+}
+@media(max-width:680px){
+ .menu-group{margin-bottom:27px}
+ .group-header{padding:13px 0 15px;margin-bottom:16px}
+ .group-title{font-size:29px}
+ .menu-dish{padding:17px 18px 20px 21px;border-radius:5px}
+ .menu-dish::after{height:14px;width:14px;right:11px;bottom:11px}
+ .menu-dish h4{font-size:22px}
+ .menu-dish p{font-size:11.5px}
+ .menu-price{font-size:14px;padding:7px 10px}
+ .dish-meta{margin-bottom:11px}
+ .subcat-nav{padding:18px 0 16px;display:block}
+ .subcat-nav > .subcat-button{display:none!important}
+ .subcat-mobile-chooser{display:flex;flex-direction:column;gap:7px;max-width:100%;width:100%;padding:13px 14px;background:#f3eadc;border:1px solid #deceb5;border-radius:9px;position:relative}
+ .subcat-mobile-label{font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:#977348;line-height:1.25}
+ .subcat-mobile-select{
+    appearance:none;
+    -webkit-appearance:none;
+    width:100%;
+    min-height:48px;
+    min-width:0;
+    border-radius:5px;
+    border:1px solid #d5c2a4;
+    padding:10px 40px 10px 13px;
+    background-color:#fffcf8;
+    color:#173b5a;
+    font-size:14px;
+    line-height:1.2;
+    font-weight:650;
+    box-shadow:0 2px 8px rgba(12,35,50,.035);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath d='M4 6l5 5 5-5' stroke='%231b5273' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-size:18px;
+    background-position:calc(100% - 13px) center;
+ }
+ .subcat-mobile-select:focus-visible{outline:3px solid #c7a16c;outline-offset:2px}
+ .menu-foot p{font-size:10px}
+}
+@media(max-width:370px){
+ .menu-dish{padding:16px 14px 18px 18px}
+ .menu-dish h4{font-size:19px}
+ .menu-price{font-size:13px}
+ .subcat-mobile-select{font-size:13px}
+}
+@media print {
+ .menu-dish{border:0;border-bottom:1px solid #c4c4c4;box-shadow:none;padding:10px 0}
+ .menu-dish::before,.menu-dish::after{display:none}
+ .subcat-mobile-chooser{display:none}
+}
+/* === END EL GRECO V8 EDITORIAL MENU === */
