@@ -1580,3 +1580,10 @@ img { max-width:100%; }
   .hero h1.greek-gradient-wordmark{-webkit-text-stroke:1px #05283f}
 }
 /* === END EL GRECO V12 === */
+
+/* EL GRECO V14 — Hide the mobile "Speisen auswählen" category dropdown.
+   The full menu remains visible and the desktop category filters remain available. */
+@media (max-width:680px){
+  .menu-section .subcat-nav{display:none!important}
+}
+/* END V14 */
