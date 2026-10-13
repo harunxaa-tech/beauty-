@@ -899,3 +899,37 @@ img { max-width:100%; }
   .menu-tab,.subcat-button,.menu-dish{transition:none!important}
 }
 /* === END EL GRECO V6 PREMIUM MENU === */
+
+
+/* V7 – three meaningful menu groups, no empty dessert section */
+.menu-tabs{grid-template-columns:repeat(3,minmax(0,1fr));}
+.menu-tab{min-width:0;}
+.menu-status{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap;position:relative;z-index:1;}
+.lunch-hours{display:inline-flex;align-items:center;border:1px solid rgba(245,220,180,.7);padding:10px 15px;border-radius:99px;color:#fff4dc;font-weight:750;font-size:11px;letter-spacing:.025em;background:rgba(11,39,60,.35);white-space:nowrap;}
+.lunch-hours[hidden]{display:none!important;}
+.menu-tab-subtitle{overflow-wrap:normal;}
+@media(max-width:850px){
+  .menu-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .menu-tab[data-menu-tab="mittagsgerichte"]{grid-column:1 / -1;}
+  .menu-tab[data-menu-tab="mittagsgerichte"] .menu-tab-title{font-size:20px;}
+  .menu-tab[data-menu-tab="mittagsgerichte"] .menu-tab-subtitle{font-size:11px;}
+}
+@media(max-width:680px){
+  .category-grid .category-card:last-child{grid-column:1 / -1;display:grid;grid-template-columns:42% minmax(0,1fr);min-height:138px;align-items:stretch;}
+  .category-grid .category-card:last-child .category-image{height:100%;min-height:138px;aspect-ratio:auto;}
+  .category-grid .category-card:last-child .category-info{align-content:center;padding:15px;}
+  .category-grid .category-card:last-child .category-info strong{font-size:19px;}
+  .category-grid .category-card:last-child .category-info small{font-size:11px;line-height:1.65;}
+  .menu-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .menu-tab[data-menu-tab="mittagsgerichte"]{grid-column:1 / -1;min-height:75px;}
+  .menu-tab[data-menu-tab="mittagsgerichte"] .menu-tab-title{font-size:19px;}
+  .menu-tab[data-menu-tab="mittagsgerichte"] .menu-tab-subtitle{font-size:11px;}
+  .menu-panel-head{align-items:flex-start;}
+  .menu-status{justify-content:flex-start;}
+  .lunch-hours{font-size:10px;padding:7px 10px;}
+}
+@media(max-width:390px){
+  .category-grid .category-card:last-child{min-height:120px;}
+  .category-grid .category-card:last-child .category-image{min-height:120px;}
+  .category-grid .category-card:last-child .category-info strong{font-size:17px;}
+}
