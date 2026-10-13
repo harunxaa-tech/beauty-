@@ -11,7 +11,7 @@
   <meta property="og:description" content="Griechische Gastfreundschaft in Neubiberg – unabhängige Designvorschau.">
   <title>El Greco Neubiberg · Griechische Gastfreundschaft | Designvorschau</title>
   <link rel="preload" href="assets/greco-nacht.jpg" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="style-v4.css?v=8">
+  <link rel="stylesheet" href="style-v4.css?v=9">
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -24,7 +24,7 @@
           <path d="M9 59c13-22 18-37 37-52" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           <path d="M12 51C6 50 2 44 4 38c7 2 11 7 8 13ZM18 41C10 40 7 35 8 28c7 2 11 6 10 13ZM25 31c-9-1-12-7-11-13 8 3 12 7 11 13ZM33 21c-6-5-7-12-3-17 6 6 7 12 3 17ZM15 48c5-8 12-10 17-7-4 7-10 10-17 7ZM22 37c6-9 13-11 18-7-4 7-10 11-18 7ZM30 26c5-8 11-10 17-8-3 8-9 11-17 8Z" fill="currentColor"/>
         </svg>
-        <span class="identity-text"><strong>EL GRECO</strong><small>NEUBIBERG · GRIECHISCHE GASTFREUNDSCHAFT</small></span>
+        <span class="identity-text"><strong>EL GRECO</strong><span class="brand-subline"><small>NEUBIBERG · GRIECHISCHE GASTFREUNDSCHAFT</small><span class="greek-badge" role="img" aria-label="Griechische Flagge" title="Griechische Gastfreundschaft"><svg viewBox="0 0 36 36" focusable="false" aria-hidden="true"><defs><clipPath id="greek-header-flag-clip"><circle cx="18" cy="18" r="17"/></clipPath></defs><g clip-path="url(#greek-header-flag-clip)"><rect width="36" height="36" fill="#0d5eaf"/><path d="M0 4H36V8H0ZM0 12H36V16H0ZM0 20H36V24H0ZM0 28H36V32H0Z" fill="white"/><path d="M0 0H20V20H0Z" fill="#0d5eaf"/><path d="M8 0H12V20H8ZM0 8H20V12H0Z" fill="white"/></g><circle cx="18" cy="18" r="17" fill="none" stroke="#c7a369" stroke-width="1.5"/></svg></span></span></span>
       </a>
       <nav class="desktop-navigation" aria-label="Hauptmenü">
         <a href="#start">Startseite</a>
@@ -113,10 +113,43 @@
       </div>
     </section>
 
-    <section class="mood-strip" id="galerie" aria-label="Mediterranes Lebensgefühl und Eindrücke aus dem Restaurant">
-      <div class="mood-photo mood-food"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=82" alt="Frisch gegrillte Spezialitäten – Symbolfoto" loading="lazy" decoding="async"><span>Einfach genießen.</span></div>
-      <div class="mood-slogan"><svg viewBox="0 0 140 160" aria-hidden="true"><path d="M28 145C62 101 67 47 121 12M54 98C29 88 26 57 37 45c23 15 27 33 17 53ZM72 79C95 50 120 50 128 56c-14 24-33 31-56 23ZM86 53C70 40 69 21 76 10c18 13 21 29 10 43Z" fill="none" stroke="currentColor" stroke-width="2"/></svg><p>Authentisch.<br>Frisch. Griechisch.</p><small>EL GRECO · NEUBIBERG</small></div>
-      <div class="mood-photo"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=82" alt="Gemütliches Restaurantambiente – Symbolfoto" loading="lazy" decoding="async"><span>Ein Ort zum Wohlfühlen.</span></div>
+    <section class="restaurant-gallery" id="galerie" aria-labelledby="gallery-heading">
+      <div class="shell">
+        <div class="gallery-heading">
+          <div>
+            <p class="section-overline left"><span></span> EINBLICKE IN UNSER RESTAURANT</p>
+            <h2 id="gallery-heading">Ein Ort zum <em>Wohlfühlen.</em></h2>
+          </div>
+          <p>Rustikale Gemütlichkeit, mediterranes Flair und ein heller Wintergarten: Entdecken Sie das echte El Greco in Neubiberg.</p>
+        </div>
+        <div class="restaurant-gallery-grid" aria-label="Restaurantfotogalerie">
+          <button class="gallery-photo gallery-photo-featured" type="button" data-gallery-full="assets/elgreco-interior-wintergarden.jpg" data-gallery-title="Unser Wintergarten" aria-label="Originalfoto des Wintergartens vergrößern">
+            <img src="assets/elgreco-interior-wintergarden.jpg" alt="Heller Wintergarten mit Holztischen und farbigen Glasflaschen im El Greco" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>01 / UNSER RESTAURANT</small><strong>Der Wintergarten</strong><span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-full="assets/elgreco-interior-dining.jpg" data-gallery-title="Gemütlicher Gastraum" aria-label="Originalfoto des Gastraums vergrößern">
+            <img src="assets/elgreco-interior-dining.jpg" alt="Gastraum mit weiß gedeckten Tischen und mediterranem Steindekor" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>02 / ATMOSPHÄRE</small><strong>Gemütlich genießen</strong><span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-full="assets/elgreco-exterior-entrance.jpg" data-gallery-title="Unser Eingang" aria-label="Originalfoto des Eingangs vergrößern">
+            <img src="assets/elgreco-exterior-entrance.jpg" alt="Eingangsbereich des El Greco mit Restaurant-Schild und bewachsener Fassade" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>03 / AUSSENANSICHT</small><strong>Herzlich willkommen</strong><span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-full="assets/elgreco-interior-veranda.jpg" data-gallery-title="Sonnige Veranda" aria-label="Originalfoto der Veranda vergrößern">
+            <img src="assets/elgreco-interior-veranda.jpg" alt="Sonnige, verglaste Veranda mit Holztischen und Flaschenregalen im El Greco" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>04 / HELL & FREUNDLICH</small><strong>Unsere Veranda</strong><span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-full="assets/elgreco-interior-stone.jpg" data-gallery-title="Mediterranes Interieur" aria-label="Originalfoto mit mediterraner Einrichtung vergrößern">
+            <img src="assets/elgreco-interior-stone.jpg" alt="Mediterraner Gastraum mit Naturstein, Pflanzen und schmiedeeisernen Elementen" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>05 / MEDITERRANES FLAIR</small><strong>Liebe zum Detail</strong><span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="gallery-photo" type="button" data-gallery-full="assets/elgreco-interior-bar.jpg" data-gallery-title="Unsere Getränkeecke" aria-label="Originalfoto der Getränkeecke vergrößern">
+            <img src="assets/elgreco-interior-bar.jpg" alt="Dekorative Regale mit griechischen Getränkeflaschen und gemütlicher Sitzbereich im El Greco" loading="lazy" decoding="async">
+            <span class="gallery-photo-label"><small>06 / GRIECHISCHE DETAILS</small><strong>Ein Stück Griechenland</strong><span aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+        <p class="gallery-note">Originalaufnahmen aus dem Restaurant. Für die kommerzielle Veröffentlichung sind die Bildrechte mit dem Betreiber zu klären.</p>
+      </div>
     </section>
 
     <section class="menu-section shell" id="vollstaendige-karte" aria-labelledby="full-menu-heading">
@@ -215,8 +248,9 @@
     <div class="shell foot-bottom"><span>© <span id="year">2026</span> El Greco · unabhängige Designvorschau</span><span>Kein offizieller oder freigegebener Internetauftritt</span></div>
   </footer>
   <div class="sticky-mobile-actions"><a href="#speisekarte" aria-label="Speisekarte öffnen"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg> Speisekarte</a><a href="tel:+498960060465"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.71 2.79a2 2 0 0 1-.45 2.11L9.09 10.9a16 16 0 0 0 4.01 4.01l1.28-1.25a2 2 0 0 1 2.11-.45c.89.35 1.83.59 2.79.71A2 2 0 0 1 22 16.92z"/></svg> Reservieren</a></div>
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="gallery-lightbox-title"><button type="button" class="gallery-lightbox-close" id="gallery-lightbox-close" aria-label="Großansicht schließen">×</button><img id="gallery-lightbox-image" alt=""><p id="gallery-lightbox-title"></p></dialog>
   <dialog id="notice-dialog" aria-labelledby="notice-title"><button class="close-dialog" id="notice-close" type="button" aria-label="Schließen">✕</button><h2 id="notice-title">Hinweise zur Website-Demo</h2><p>Dies ist ein unabhängiger Gestaltungsentwurf, nicht die offizielle Website oder eine beauftragte Veröffentlichung durch das Restaurant.</p><p>Gerichte, Preise und Öffnungszeiten wurden aus bereitgestelltem Material übertragen und sind noch zu bestätigen. Für die abgebildeten Restaurantfotos ist vor der kommerziellen Nutzung die Zustimmung der jeweiligen Rechteinhaber erforderlich. Einzelne Kategoriebilder sind Symbolfotos.</p><p>Die Website enthält keine eigenen Tracking-Cookies und kein Reservierungsformular. Für die Bildübermittlung externer Symbolfotos wird Unsplash verwendet; dabei können technische Zugriffsdaten an den Anbieter gelangen. GitHub Pages kann technische Zugriffsdaten zur Auslieferung verarbeiten. Externe Karten- und Restaurantlinks werden erst beim Anklicken aufgerufen. Ein rechtlich vollständiges Impressum und eine Datenschutzerklärung sind vor Freigabe mit dem Betreiber zu erstellen.</p></dialog>
   <script src="menu.js?v=4" defer></script>
-  <script src="site-v4.js?v=8" defer></script>
+  <script src="site-v4.js?v=9" defer></script>
 </body>
 </html>
