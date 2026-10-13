@@ -1,0 +1,14 @@
+(function(){
+  'use strict';
+  var menuToggle=document.getElementById('menu-toggle');
+  var mobileNav=document.getElementById('mobile-nav');
+  function closeMenu(){if(!menuToggle||!mobileNav)return;mobileNav.hidden=true;menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Menü öffnen');}
+  if(menuToggle&&mobileNav){menuToggle.addEventListener('click',function(){var open=menuToggle.getAttribute('aria-expanded')==='true';mobileNav.hidden=open;menuToggle.setAttribute('aria-expanded',String(!open));menuToggle.setAttribute('aria-label',open?'Menü öffnen':'Menü schließen');});mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});document.addEventListener('click',function(e){if(!mobileNav.hidden&&!mobileNav.contains(e.target)&&!menuToggle.contains(e.target))closeMenu()});window.addEventListener('resize',function(){if(window.innerWidth>960)closeMenu()});}
+  var filters=document.querySelectorAll('.filter-button');
+  var entries=document.querySelectorAll('.menu-item');
+  filters.forEach(function(btn){btn.addEventListener('click',function(){var cat=btn.getAttribute('data-filter');filters.forEach(function(item){var active=item===btn;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});entries.forEach(function(entry){var values=(entry.getAttribute('data-category')||'').split(' ');entry.hidden=cat!=='alle'&&!values.includes(cat)});});});
+  var lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightbox-image'),lightboxCaption=document.getElementById('lightbox-caption');
+  if(lightbox&&typeof lightbox.showModal==='function'){document.querySelectorAll('.gallery-card').forEach(function(card){card.addEventListener('click',function(){var img=card.querySelector('img');if(!img)return;lightboxImage.src=img.currentSrc||img.src;lightboxImage.alt=img.alt;lightboxCaption.textContent=card.getAttribute('data-caption')||'';lightbox.showModal()})});document.getElementById('lightbox-close').addEventListener('click',function(){lightbox.close()});lightbox.addEventListener('click',function(e){if(e.target===lightbox)lightbox.close()});lightbox.addEventListener('close',function(){lightboxImage.removeAttribute('src')});}
+  var privacy=document.getElementById('privacy-dialog');var privacyOpen=document.getElementById('privacy-open');var privacyClose=document.getElementById('privacy-close');if(privacy&&privacyOpen&&privacyClose&&typeof privacy.showModal==='function'){privacyOpen.addEventListener('click',function(){privacy.showModal()});privacyClose.addEventListener('click',function(){privacy.close()});privacy.addEventListener('click',function(e){if(e.target===privacy)privacy.close()})}
+  var year=document.getElementById('year');if(year)year.textContent=String(new Date().getFullYear());
+})();
