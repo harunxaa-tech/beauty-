@@ -47,3 +47,40 @@ body{background:#f8fafb}.site-header{background:rgba(255,255,254,.98);border-bot
 .mobile-bottom{background:#f8fbfe;border-top-color:#c0d5e4}.mobile-bottom a{background:#e7f0f7}.mobile-bottom a:last-child{background:#15518d}
 @media(max-width:660px){.hero-bg{background-position:62% center}.hero-shade{background:linear-gradient(90deg,rgba(2,32,71,.91),rgba(6,55,103,.65)),linear-gradient(0deg,rgba(0,26,65,.55),transparent 65%)}.hero h1{font-size:clamp(40px,9.4vw,55px);letter-spacing:-.05em;line-height:1.12;max-width:380px}.menu-section{padding-top:88px;padding-bottom:88px}.menu-section::before{top:8px}.menu-section::after{bottom:8px}.center-title h2{font-size:clamp(40px,10vw,50px)}.intro-photo{height:365px}.section h2{font-size:clamp(37px,9vw,49px)}}
 @media(max-width:390px){.hero h1{font-size:38px}}
+
+
+/* V3 accessible full printable menu with dinner/lunch selection */
+.menu-section{overflow:clip}
+.menu-catalogue-shell{position:relative;background:#fbfaf6;color:#163f72;border:1px solid #d1dce7;box-shadow:0 25px 55px rgba(0,20,54,.16);border-radius:4px;max-width:1150px;margin:0 auto}
+.catalogue-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cad8e4;background:#e5eef7}
+.catalogue-tab{border:0;border-bottom:4px solid transparent;display:flex;justify-content:center;align-items:center;gap:13px;padding:23px 15px 19px;color:#355c80;background:transparent;font-size:15px;font-weight:750;transition:background .2s}
+.catalogue-tab small{font-size:11px;opacity:.73;font-weight:500}
+.catalogue-tab.is-active{background:#fffefa;color:#123f73;border-bottom-color:#1f70a9}
+.catalogue-tab:hover:not(.is-active){background:#edf5fd}
+.catalogue-controls{padding:25px 30px 16px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.9fr) auto;align-items:end;gap:15px}
+.catalogue-field{min-width:0}.catalogue-field label{display:block;color:#426683;font-weight:700;font-size:11px;letter-spacing:.06em;margin:0 0 8px}
+.catalogue-field input,.catalogue-field select{display:block;width:100%;max-width:100%;min-width:0;height:49px;border-radius:3px;border:1px solid #b9cbd9;background:#fff;color:#163f72;padding:0 15px;font-size:14px;box-sizing:border-box}
+.catalogue-field input:focus,.catalogue-field select:focus{outline:2px solid #589ccf;outline-offset:1px}
+.catalogue-reset{height:49px;border:1px solid #b9cbd9;border-radius:3px;background:#ecf3f8;color:#275681;font-size:12px;padding:0 15px;white-space:nowrap}
+.catalogue-reset:hover{background:#dcecf7}
+.catalogue-results-top{padding:0 30px 21px;display:flex;justify-content:space-between;gap:16px;font-size:11px;font-weight:600;color:#6b8498}
+.catalogue-pricing{text-align:right}
+.full-menu-results{padding:5px 30px 8px}
+.full-menu-group{padding-bottom:26px;break-inside:avoid-page}
+.full-menu-heading-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px 0;border-top:2px solid #2d74a7;border-bottom:1px solid #caddeb;margin-bottom:1px}
+.full-menu-heading{font:400 31px/1.2 Georgia,'Times New Roman',serif;color:#123f73;margin:0}
+.full-menu-group-count{font-size:10px;color:#6586a1;white-space:nowrap}
+.full-menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.full-menu-dish{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:start;gap:12px;min-width:0;padding:17px 0 19px;border-bottom:1px solid #e5e9e8}
+.full-menu-number{color:#6c94b3;font-size:11px;font-weight:750;margin-top:4px;white-space:nowrap}
+.full-menu-name{color:#184d7c;font:600 17px/1.38 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;overflow-wrap:anywhere}
+.full-menu-description{font-size:12px;line-height:1.6;color:#657d8f;margin:6px 0 0;hyphens:auto}
+.full-menu-price{color:#113d70;font-size:15px;font-weight:750;white-space:nowrap;padding-top:3px;font-variant-numeric:tabular-nums}
+.catalogue-empty{padding:45px 30px;text-align:center;color:#54718e;font-size:13px}
+.catalogue-notices,.catalogue-allergens{margin:0 30px;padding:18px 0;border-top:1px solid #d5dfeb;font-size:11px;line-height:1.7;color:#59728b}
+.catalogue-allergens{padding:14px 0 29px;border-top:0}
+.menu-ctas{margin-top:32px}
+@media(max-width:880px){.full-menu-grid{grid-template-columns:1fr}.catalogue-controls{grid-template-columns:1fr 1fr}.catalogue-reset{grid-column:1 / -1;max-width:190px}.full-menu-dish{padding:15px 0}}
+@media(max-width:660px){.menu-section{padding:88px 0}.menu-section .container{width:min(100% - 30px,1240px)}.menu-catalogue-shell{margin:0 -1px}.catalogue-tab{padding:16px 8px 14px;flex-direction:column;gap:3px;font-size:13px}.catalogue-tab small{font-size:10px}.catalogue-controls{grid-template-columns:1fr;padding:19px 16px 11px;gap:13px}.catalogue-field input,.catalogue-field select{height:46px;font-size:14px}.catalogue-reset{grid-column:auto;height:42px;max-width:none}.catalogue-results-top{padding:5px 16px 13px;flex-wrap:wrap;gap:5px;font-size:10px}.full-menu-results{padding:0 16px 10px}.full-menu-heading{font-size:27px}.full-menu-group-count{font-size:9px}.full-menu-dish{grid-template-columns:30px minmax(0,1fr) auto;gap:8px;padding:15px 0}.full-menu-name{font-size:14px;line-height:1.35}.full-menu-description{font-size:11px;line-height:1.55}.full-menu-number{font-size:10px}.full-menu-price{font-size:13px;white-space:nowrap}.full-menu-group{padding-bottom:20px}.catalogue-notices,.catalogue-allergens{margin:0 16px;font-size:10px}.menu-ctas{margin-top:23px}}
+@media(max-width:390px){.menu-section .container{width:min(100% - 24px,1240px)}.full-menu-results{padding-left:12px;padding-right:12px}.catalogue-controls{padding-left:12px;padding-right:12px}.full-menu-dish{grid-template-columns:27px minmax(0,1fr) auto;gap:5px}.full-menu-name{font-size:13px}.full-menu-price{font-size:12px}.full-menu-description{font-size:10px}}
+@media print{.demo-banner,.site-header,.hero,.feature-ribbon,.intro-section,.signature-section,.moment-section,.quote-section,.visit-section,.last-cta,.footer,.mobile-bottom,.menu-ctas,.catalogue-controls,.catalogue-tabs,.menu-section::before,.menu-section::after,.greek-key-divider{display:none!important}.menu-section{background:white!important;color:black!important;padding:0}.menu-section .center-title h2{color:black}.menu-catalogue-shell{box-shadow:none;border:0}.full-menu-dish{break-inside:avoid}.full-menu-results{padding:0}.full-menu-heading{color:black}.full-menu-price{color:black}}
