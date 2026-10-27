@@ -21,7 +21,7 @@
 .cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .card{display:flex;flex-direction:column;scroll-margin-top:115px;transition:box-shadow .25s,transform .25s}
 .card:hover{box-shadow:0 16px 34px #1b2c301c;transform:translateY(-3px)}
-.card:target{outline:3px solid var(--accent);outline-offset:4px}
+.card:target{outline:none;outline-offset:0}
 .card .image{height:205px;flex:none}
 .card .body{display:flex;flex-direction:column;flex:1;padding:24px}
 .card .body h3{font-size:clamp(19px,1.9vw,25px);margin:4px 0 13px;line-height:1.2}
@@ -82,6 +82,101 @@
 .faq details[open] summary::after{content:'−';background:#b995633d}
 .faq summary:focus-visible{outline:2px solid #b99563;outline-offset:5px}
 .faq details p{max-width:720px}
+
+/* Cohesive, calm service-card refinement */
+.more-grid{gap:18px;align-items:start}
+.more-grid .extra-item,
+.more-grid .extra-item:nth-child(3n+2),
+.more-grid .extra-item:nth-child(3n){
+  background:#faf9f6;
+  border:1px solid #d7d6cf;
+  border-left:3px solid #bca47f;
+  border-radius:8px;
+  box-shadow:0 3px 15px rgba(25,41,47,.045);
+  overflow:hidden;
+  transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease;
+}
+.more-grid .extra-item:hover{
+  border-color:#c3b8a7;
+  border-left-color:#aa8b5e;
+  box-shadow:0 7px 20px rgba(25,41,47,.075);
+}
+.more-grid .extra-item[open],
+.more-grid .extra-item[open]:hover{
+  background:#f1eee7;
+  border-color:#c9c1b5;
+  border-left-color:#a98b61;
+  box-shadow:0 10px 23px rgba(25,41,47,.075);
+}
+.more-grid .extra-item summary{
+  min-height:78px;
+  padding:18px 22px 18px 24px;
+  background:transparent;
+  border-bottom:1px solid transparent;
+  border-radius:0;
+  transition:none;
+}
+.more-grid .extra-item[open] summary{
+  border-bottom-color:rgba(85,91,82,.13);
+}
+.more-grid .extra-item summary:hover,
+.more-grid .extra-item[open] summary:hover{
+  background:transparent;
+}
+.more-grid .extra-item summary:before{content:none;display:none}
+.more-grid .extra-item summary>span:first-child{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:-.015em;
+  color:#283943;
+  line-height:1.4;
+}
+.more-grid .extra-item .expand-icon,
+.more-grid .extra-item:nth-child(3n+2) .expand-icon,
+.more-grid .extra-item:nth-child(3n) .expand-icon{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border:1px solid #e1d8c9;
+  border-radius:50%;
+  background:#eae4d9;
+  color:#6c655d;
+  font-size:21px;
+  font-weight:400;
+  padding:0;
+  line-height:1;
+  transition:transform .2s ease,background-color .2s ease;
+}
+.more-grid .extra-item[open] .expand-icon{
+  background:#e3d7c5;
+  color:#4c4b48;
+}
+.more-grid .extra-item .extra-body{
+  background:transparent;
+  padding:22px 25px 26px 24px;
+}
+.more-grid .extra-item .extra-body p{
+  margin:0 0 20px;
+  color:#4b5960;
+  font-size:14px;
+  line-height:1.72;
+}
+.more-grid .extra-item .extra-body a{
+  color:#5e503f;
+  border-bottom-color:#ad926c;
+  font-weight:800;
+}
+.more-grid .extra-item .extra-body a:hover{color:#293e49}
+@media(max-width:760px){
+  .more-grid{gap:14px}
+  .more-grid .extra-item summary{min-height:72px;padding:16px 18px 16px 20px}
+  .more-grid .extra-item .extra-body{padding:18px 20px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .more-grid .extra-item,.more-grid .extra-item .expand-icon{transition:none}
+}
 </style></head><body>
 <header class="header"><div class="header-top"><div class="container"><span>Bauunternehmen · Deutschlandweite Anfragen</span><span>Kontakt: +49 174 417 8888</span></div></div><div class="container header-main"><a class="brand" href="#start">ADRIAN<small>BAUUNTERNEHMEN GMBH</small></a><nav id="nav" aria-label="Hauptnavigation"><a href="#leistungen">Leistungen</a><a href="#unternehmen">Unternehmen</a><a href="#ablauf">Zusammenarbeit</a><a href="#fragen">FAQ</a><a href="#kontakt">Kontakt</a></nav><a class="btn" href="#kontakt">Projekt anfragen →</a><button class="menu-button" id="menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav">☰</button></div></header>
 <main><section class="hero" id="start"><div class="hero-art" aria-hidden="true"></div><div class="container hero-main"><span class="overline">Adrian Bauunternehmen GmbH · Neubiberg</span><h1>Wir bauen.<br>Mit <em>Weitblick.</em></h1><p>Hochbau, Tiefbau, Innenausbau und Außenanlagen. Wir begleiten Ihr Bauvorhaben mit Blick für das Wesentliche – von der ersten Anfrage bis zur Umsetzung.</p><div class="hero-buttons"><a href="#kontakt" class="btn">Projekt jetzt anfragen →</a><a href="#leistungen" class="btn secondary">Leistungen entdecken →</a></div></div><div class="hero-bottom"><div class="container"><span><b>+</b> Sitz in Neubiberg · Anfragen bundesweit</span><span>Weiter entdecken ↓</span></div></div></section>
